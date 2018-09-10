@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "libraries": {
+    "FSharp.Core/4.5.2": {
+      "sha512": "mQlCpyv/wNZAihLBUbBu8gS4NpXpBCTw/eMQqujn8sGBukxSYH3CoE0vPABACNQEv7HoAX7CJt5q7l6Yb2E2hg=="
+    },
+    "Something.Else": {
+      "sha512": "mQlCpyv/wNZAihLBUbBu8gS4NpXpBCTw/eMQqujn8sGBukxSYH3CoE0vPABACNQEv7HoAX7CJt5q7l6Yb2E2hg=="
+    }
+  }
+}
