@@ -10,7 +10,7 @@ manipulationg nuget config for dotnet restore.
 **general**
 
 * [x] Build a working derivation from nix files.
-* [ ] use `builtins.fromJSON` for nuget list
+* [x] use `builtins.fromJSON` for nuget list
 * [ ] Create besides `nuget.nix` file, a template for `default.nix`
 * [ ] Test with sources different then `./.` maybe `fetchFromGitHub`
 * [ ] Check if integration with `fetchFromNuGet` of `nixpkgs` makes sense

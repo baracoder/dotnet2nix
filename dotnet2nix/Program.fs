@@ -5,7 +5,7 @@ open System.IO
 open System.IO.Enumeration
 open FSharp.Data
 
-type PkgInfo = { AttrName: string; Name: string ; Version: string; Sha512: string }
+type PkgInfo = { Name: string ; Version: string; Sha512: string }
 
 // combine paths with custom operator
 let (+/) p1 p2 = Path.Combine(p1, p2)
@@ -40,22 +40,20 @@ let getPackageInfos (path: string) =
                         |> bytesToHex
                         |> hexToNixNotation
         {
-            AttrName = name.Replace(".", "")
             Name = name;
             Version = version;
             Sha512 =  sha512str
         }
     )
 
-// Yes multiline strings are ugly!
-let pkgInfoAsNixStr pkgInfo =
-    sprintf """
-%s = fetchNuGet {
-  baseName = "%s";
-  version = "%s";
-  sha512 = "%s";
-  outputFiles = [ "*" ];
-};""" pkgInfo.AttrName pkgInfo.Name pkgInfo.Version pkgInfo.Sha512
+
+let pkgInfoAsJsonValue pkgInfo =
+    [|
+      "baseName", JsonValue.String pkgInfo.Name;
+      "version",  JsonValue.String pkgInfo.Version;
+      "sha512", JsonValue.String pkgInfo.Sha512
+    |] 
+    |> JsonValue.Record
 
 [<EntryPoint>]
 let main argv =
@@ -65,12 +63,10 @@ let main argv =
     
     let packageDescriptions = 
         pkgInfos
-        |> Array.toList
-        |> List.map pkgInfoAsNixStr
-        |> String.concat "\n"
-    let contents =  
-        sprintf "{ fetchNuGet } : { %s }" packageDescriptions
-    
-    System.IO.File.WriteAllText ("nuget.nix", contents)
+        |> Array.map pkgInfoAsJsonValue
+        |> JsonValue.Array
+        
+    use f = File.CreateText("nugets.json")
+    packageDescriptions.WriteTo (f, JsonSaveOptions.None)
     
     0
