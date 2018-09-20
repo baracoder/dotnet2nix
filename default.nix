@@ -51,8 +51,6 @@ let
             '';
             dontStrip = true;
 
-            # TODO get dotnet runtime accepted, replace sdk by runtime here for much smaller closures
-            # TODO add option to produce self-contained results
             installPhase = ''
                 runHook preInstall
 
