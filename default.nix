@@ -1,15 +1,17 @@
 {nixpkgs ? <nixpkgs> }:
 let
     pkgs = import nixpkgs {};
-    fetchNuGet = (
-      { baseName
+    baseUrls = if builtins.pathExists ./dotnet2nix/urls.json then builtins.fromJSON (builtins.readFile ./dotnet2nix/urls.json ) else [ "https://www.nuget.org/api/v2/package" ];
+    getUrls = baseName: version: urls: if urls != null then urls else map (base: "${base}/${baseName}/${version}" ) baseUrls;
+    fetchNuGet = ({
+      baseName
       , version
-      , urls ? [ "https://www.nuget.org/api/v2/package/${baseName}/${version}" ]
+      , urls ? null
       , sha512
-      }:
-      pkgs.fetchurl {
-      inherit urls sha512;
-      name = "${baseName}.${version}.nupkg";
+      }: pkgs.fetchurl {
+          inherit sha512;
+          urls = getUrls baseName version urls;
+          name = "${baseName}.${version}.nupkg";
     });
     nugetInfos = builtins.fromJSON (builtins.readFile ./dotnet2nix/nugets.json );
     nugetsList = builtins.filter pkgs.lib.isDerivation (map (n: fetchNuGet n) nugetInfos);
