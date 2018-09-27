@@ -1,20 +1,34 @@
-{nixpkgs ? <nixpkgs> }:
+{
+  pkgs ? import <nixpkgs> {}
+  , feedUrlsFile ? ./urls.json
+  , defaultFeedUrl ? "https://www.nuget.org/api/v2"
+  , netrc-file ? null
+}:
 let
-    pkgs = import nixpkgs {};
-    baseUrls = if builtins.pathExists ./dotnet2nix/urls.json then builtins.fromJSON (builtins.readFile ./dotnet2nix/urls.json ) else [ "https://www.nuget.org/api/v2/package" ];
-    getUrls = baseName: version: urls: if urls != null then urls else map (base: "${base}/${baseName}/${version}" ) baseUrls;
-    fetchNuGet = ({
+    fetchurl = if netrc-file == null
+               then pkgs.fetchurl
+               else args: pkgs.fetchurl (args // {
+                    curlOpts = "--netrc-file ${netrc-file}";
+               });
+    feedUrls = if builtins.pathExists feedUrlsFile
+               then builtins.fromJSON (builtins.readFile feedUrlsFile )
+               else [ defaultFeedUrl ];
+    getUrls = baseName: version: urls:
+              if urls != null
+              then urls
+              else map (base: "${base}/package/${baseName}/${version}" ) feedUrls;
+    fetchNuPkg = ({
       baseName
       , version
       , urls ? null
       , sha512
-      }: pkgs.fetchurl {
+      }: fetchurl {
           inherit sha512;
           urls = getUrls baseName version urls;
           name = "${baseName}.${version}.nupkg";
     });
-    nugetInfos = builtins.fromJSON (builtins.readFile ./dotnet2nix/nugets.json );
-    nugetsList = builtins.filter pkgs.lib.isDerivation (map (n: fetchNuGet n) nugetInfos);
+    nugetInfos = builtins.fromJSON (builtins.readFile ./nugets.json );
+    nugetsList = map (n: fetchNuPkg n) nugetInfos;
 in
 {
     dotnet2nix = pkgs.stdenv.mkDerivation rec {
