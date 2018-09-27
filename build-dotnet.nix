@@ -1,9 +1,10 @@
 { fetchurl, dotnet-sdk, stdenv }:
 {
-  baseName,
-  version,
-  src,
-  feedUrlsFile ? ./urls.json
+  baseName
+  , version,
+  , src
+  , nugetsFile ? ./nugets.json
+  , feedUrlsFile ? ./urls.json
   , defaultFeedUrl ? "https://www.nuget.org/api/v2"
   , netrc-file ? null
 }:
@@ -30,7 +31,7 @@ let
           urls = getUrls baseName version urls;
           name = "${baseName}.${version}.nupkg";
     });
-    nugetInfos = builtins.fromJSON (builtins.readFile ./nugets.json );
+    nugetInfos = builtins.fromJSON (builtins.readFile nugetsFile );
     nugetsList = map (n: fetchNuPkg n) nugetInfos;
 in
 stdenv.mkDerivation rec {
