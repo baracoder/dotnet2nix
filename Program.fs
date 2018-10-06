@@ -38,7 +38,7 @@ let getPackageInfos (path: string) =
         let sha512str = p.GetProperty("sha512").AsString()
                         |> b64ToBytes
                         |> bytesToHex
-                        |> hexToNixNotation
+                        //|> hexToNixNotation
         {
             Name = name;
             Version = version;
@@ -54,6 +54,17 @@ let pkgInfoAsJsonValue pkgInfo =
       "sha512", JsonValue.String pkgInfo.Sha512
     |] 
     |> JsonValue.Record
+    
+    
+let writeBuilderFile () =
+    let builderFilename = "build-dotnet.nix"
+    if File.Exists builderFilename then 
+        printf "%s exists, specify -f to repace\n" builderFilename
+    else 
+        File.Copy(
+            AppDomain.CurrentDomain.BaseDirectory +/ builderFilename,
+            Environment.CurrentDirectory +/ builderFilename)
+        
 
 [<EntryPoint>]
 let main argv =
@@ -69,4 +80,5 @@ let main argv =
     use f = File.CreateText("nugets.json")
     packageDescriptions.WriteTo (f, JsonSaveOptions.None)
     
+    writeBuilderFile ()
     0

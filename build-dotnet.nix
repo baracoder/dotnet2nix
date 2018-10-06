@@ -1,7 +1,7 @@
 { fetchurl, dotnet-sdk, stdenv }:
 {
   baseName
-  , version,
+  , version
   , src
   , nugetsFile ? ./nugets.json
   , feedUrlsFile ? ./urls.json

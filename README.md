@@ -1,9 +1,9 @@
-# dotnet2nix WiP
+# dotnet2nix
 
-WiP tool to convert dotnet dependendencies to nix expressions
+Tool to convert dotnet nuget dependencies to nix expressions
 
 The first goal is to use the generated files to build this package itself,
-manipulationg nuget config for dotnet restore.
+manipulating nuget config for dotnet restore.
 
 ## TODO
 
@@ -34,7 +34,7 @@ nix-env -i dotnet2nix -f ./
 
 ## Problems 
 
-### Updated packages
+### Replaced packages
 
 Some packages get overwritten with an updated version while the name and the url
 does not change. This changes the hash.

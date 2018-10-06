@@ -14,7 +14,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="build-dotnet.nix">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="default.nix" />
       <Content Include="example-project.assets.json" />
+      <Content Include="README.md" />
     </ItemGroup>
 
 </Project>
