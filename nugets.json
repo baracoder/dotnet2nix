@@ -2,32 +2,32 @@
   {
     "baseName": "FSharp.Core",
     "version": "4.5.2",
-    "sha512": "233cqbgk1gfwsny4v17w0g8n6zh9m088003qbsdl317sq2j9jx83hgjwzlal473zpq28179jlvbh17jdsq53h8ji90ddh7z5fkl42cr"
+    "sha512": "1s5mbckb2jqdp08cj8nyvkp4rdy54fls7ipk1bhqqqkigd33rhhayyb16mlmk7yvkkpqjq2f4ncbdf3dh169vvpfcvk81k8kw7c9v9x"
   },
   {
     "baseName": "FSharp.Data",
     "version": "3.0.0-beta4",
-    "sha512": "0fvkwz1gnyv294540wyr20shhbxpkhzczk2svsp71aypxj8fa7yq2gfjsfxvvv65zpwidrvlka4sigcm86kqkflhgj9ic7p84v703gb"
+    "sha512": "21vvijd3pvk4awn8vvdy0advgak5xdxhh6cn8zvs8r7vxgwdi30saxxabsdc6pdv00y89mvnq92l9j9flqb5s1kvnqjml317wpyh7gv"
   },
   {
     "baseName": "Microsoft.NETCore.App",
     "version": "2.1.0",
-    "sha512": "0wbcngvczg7v6d3q6gpwh9qpxp5v8vv37bm8586bsz6vf8d8s2bcrm5qrhxzq7a9sc1m5xc49mjxk0hypc3n1l7f4y0a5nki7pzpx02"
+    "sha512": "2khm9za62f3q0dv7n4vrsp1qyip4nakg5ich5bxm4rs3ff0ar8s19r9359hphr4f018aakyfvbm85if2a6wj9735xs2jcsl93r4np4r"
   },
   {
     "baseName": "Microsoft.NETCore.DotNetAppHost",
     "version": "2.1.0",
-    "sha512": "3sq880b4g485q5igrfs50yjii8yii1336kw8012diil4y1akvzqafk5q07i2yaxb2ilp58q0c49j4220bkrvvz4pnmp90qnmlikpzkz"
+    "sha512": "18wz0h9hz370wn4x4f4vpahailwqg9yh25pgiwvknx3ghc7y128s1p8rzq17wya6qm0l64d1gm2gqgybn4d72f14q7lpbim9x48163i"
   },
   {
     "baseName": "Microsoft.NETCore.DotNetHostPolicy",
     "version": "2.1.0",
-    "sha512": "1qwcn2r1s92jhs591qj6wf51ar5a5zgfppdbkw5y36ihayi6q2wvq76c4v473hbn2zsy2a4x0syrnwf1852cav0jsw7x15kh9jk57d7"
+    "sha512": "2mwqd07qmf030pfmpssvphjchrs06ydixda98bh13irn4xrdb6fdgn8bx75kap1xrq23168jz6jjrq62xsiwskrv2zrr46n4vi8sz14"
   },
   {
     "baseName": "Microsoft.NETCore.DotNetHostResolver",
     "version": "2.1.0",
-    "sha512": "2k11s8wln3pq4i8dm6fibpdzmvm8yysw8w9n7qjww4m6s4hqrkkgshadhfarcmkyxhpym59769cd8sx0yl3c6vkk3x9krxjmzql6bvx"
+    "sha512": "1jcxs4f57fiv6j3bhil8mz4639r583qk0hdy04cjnl1fy4k9cap58ssaasmv076wnrlfgb8ilsgbdr2dp07j943kgvnr2hcfb47grbp"
   },
   {
     "baseName": "Microsoft.NETCore.Platforms",
@@ -37,11 +37,11 @@
   {
     "baseName": "Microsoft.NETCore.Targets",
     "version": "2.1.0",
-    "sha512": "074034i2qhvnvpaf5gjrh6a45hcbpmfmj2693n2pk1gsikn1bzsv1blzqga3rwiwqcqjr1z4klis22jly84w5kmdyz48hfrnb19imks"
+    "sha512": "0nm5s3gd6ld46454m57rjs5sscis1f1pc109hs8i0ixc03iy7lf46f9iqm7il11shb6250r6l56pp17vi9mb0k6xb0dd9lpp4vgbv27"
   },
   {
     "baseName": "NETStandard.Library",
     "version": "2.0.3",
-    "sha512": "3c6x0z7b5shqf7vzchf4z6iklkwrrg1jz41inlsjxxzdynfh39kdlm5n8yp5y3vva7zw5j9h2yy5g21v667hqr723iplj0ricz3ppmj"
+    "sha512": "26bvs7rr9bl46ifysgg28c71yqlrba4ar95jbq14wmqadz3k52pyyh6nksw5jcflwqgm24hba9cs0vj5z23f9gjqf6qv442789f1ga7"
   }
 ]
