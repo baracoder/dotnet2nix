@@ -1,6 +1,4 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open System
+﻿open System
 open System.IO
 open System.IO.Enumeration
 open FSharp.Data
@@ -21,14 +19,6 @@ let splitNameVersion (name:string) =
     name.Split "/" 
     |> Array.toList
 
-let hexToNixNotation s =
-    let si = System.Diagnostics.ProcessStartInfo(RedirectStandardOutput=true, FileName="nix-hash", Arguments="--type sha512 --to-base32 " + s)
-    use p = new System.Diagnostics.Process(StartInfo = si)
-    p.Start() |> ignore
-    p.WaitForExit()
-    p.StandardOutput.ReadLine()
-
-
 let getPackageInfos (path: string) =
     let json = JsonValue.Load path
     let libraries = json.GetProperty  "libraries"
@@ -38,7 +28,6 @@ let getPackageInfos (path: string) =
         let sha512str = p.GetProperty("sha512").AsString()
                         |> b64ToBytes
                         |> bytesToHex
-                        //|> hexToNixNotation
         {
             Name = name;
             Version = version;
