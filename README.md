@@ -14,8 +14,7 @@ manipulating nuget config for dotnet restore.
 * [ ] Create besides `nuget.nix` file, a template for `default.nix`
 * [ ] Test with sources different then `./.` maybe `fetchFromGitHub`
 * [ ] Check if integration with `fetchFromNuGet` of `nixpkgs` makes sense
-* [ ] Add MSBuild restore hook? (Always call dotnet2nix, after `dotnet restore` to update dependencies list)
-* [ ] Allow `--self-contained` binaries, requires `--runtime` identifier + additional packages
+* [ ] Allow `--self-contained` binaries, requires `--runtime` identifier + additional individual packages on restore
 
 
 **custom nuget sources**
@@ -23,7 +22,7 @@ manipulating nuget config for dotnet restore.
 * [x] Allow custom urls
 * [ ] Basic authentication
 * [ ] Parse Nuget.Config files for sources and credentials?
-* [ ] Allow for additional information to be an optional input suplied by hydra or CI server
+* [ ] Allow for additional information to be an optional input supplied by hydra or other CI server
 
 
 ## Installation
@@ -34,37 +33,37 @@ nix-env -i dotnet2nix -f ./
 
 ## Problems 
 
-### Replaced packages
+### Packages updated in-place (might be a problem)
 
-Some packages get overwritten with an updated version while the name and the url
-does not change. This changes the hash.
-I didn't find any way to address packages on the nuget API by the content hash yet.
+Some packages got overwritten with an updated version to add repo signatures.
+This changes the hash. If packages will get updated often in place, it could get problematic.
+See [nuget.org blog post](https://blog.nuget.org/20180810/Introducing-Repository-Signatures.html)
+and [my ticket](https://github.com/dotnet/coreclr/issues/20489)
 
 ### Multiple sources
 
 If a package is present in multiple sources, the fastest one wins.
-This can lead to inconsistencies, while generating the nuget list on different
-machines. 
-See https://github.com/NuGet/Home/issues/5611
+This can lead to inconsistencies if there are packages with different signatures.
+This will lead to wrong checksums. See [nuget ticket](https://github.com/NuGet/Home/issues/5611)
 
 ## Usage
-
-(Some of this might work already)
 
 1. Change into your dotnet project directory
 2. Restore the packages `dotnet restore`
 3. Generate the nix files `dotnet2nix`
 4. Try to build your project `nix-build --no-out-link`
 
-### Autentication
+### Authentication
 
 This seams to be in a not to good state at the moment of writing.
 
 It is possible to add credentials to the url directly, which is simple and works
-good, but those will show up in all the logs. You can also use a `netrc` file
+good, but those will show up in all the logs.
+
+You *should be able* (currently it does not work) to use a `netrc` file
 instead. [Nix](https://nixos.org/nix/manual/#description-41) will use the
 following
-location by default: `$NIX_CONF_DIR/netrc`. The connents are as follows:
+location by default: `$NIX_CONF_DIR/netrc`. The contents are as follows:
 
 ```
 machine my-machine
@@ -74,3 +73,6 @@ password my-password
 ```
 For more details see the 
 [curl documentation on netrc](https://ec.haxx.se/usingcurl-netrc.html)
+
+Most download commands do not use it and sandboxing requires additional
+tuning to allow accessing this file.
