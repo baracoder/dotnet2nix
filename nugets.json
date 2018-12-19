@@ -12,7 +12,7 @@
   {
     "baseName": "Microsoft.NETCore.App",
     "version": "2.1.0",
-    "sha512": "995c4bf248543329742fe324c98d122e1654d7767e2a85027024c30b531929a7a05156c0b9a133a97d15c86279535972a3c7e1eabc893dbb013c9c30eaa70aa7"
+    "sha512": "d83b514e902151d68f0e704cd51e136e5d61c4b5bedcbe3f6f23289c8fbb68040f15199578a7357a998ce30a7103887513bb8aead48f381394edff8c0dc63906"
   },
   {
     "baseName": "Microsoft.NETCore.DotNetAppHost",
@@ -22,26 +22,26 @@
   {
     "baseName": "Microsoft.NETCore.DotNetHostPolicy",
     "version": "2.1.0",
-    "sha512": "247c8de226d6909cbfd8796a1e7517066729cd97c8842170eee1aa594e5fc8bee6cc6ab9139be30870a1a45a8fcd1ba0336412deadf5adee82015cc50734ccab"
+    "sha512": "2dd8525941199856a5873e9f2c113958398274ef63aaf5b9ab709439393d9ff85d9a6c274eeecaa303cf230e69dadd6f9fba334ad2c6dd164c25b7f8f1fed6b4"
   },
   {
     "baseName": "Microsoft.NETCore.DotNetHostResolver",
     "version": "2.1.0",
-    "sha512": "77e577c8720c8a6cf79b832479c06d22b7f5348d683d47b3e5e6805db5525aa372154b937817a8958c00df209878a092d330e45744235c439a1ddd298ee8ce64"
+    "sha512": "fbd0fb1b9f45cf51f664ef3b1e5825ed9bf8e01ac09969f245faaba1fac75b88104eee7bdf140fe9cb9888d51eaabd7cf5e1fa859ba1e4c29484ea141898ea89"
   },
   {
     "baseName": "Microsoft.NETCore.Platforms",
     "version": "2.1.0",
-    "sha512": "6924cf2fde0d9684a24152f92de9fcc1b8c528e9e8017fef3a1decdc317a83773b19450c2c20ef9c186603bd8cda237601e77203c869afb9bcf64cd200a52725"
+    "sha512": "1a690a7e8c9eaea9ac1cc9fb3998f400aa5c05a6c3f8669a7eaa61bd7d8cc38d3a230889472d6929c2aa7427ca25f626911c89ebe7be45a532960749a036b58d"
   },
   {
     "baseName": "Microsoft.NETCore.Targets",
     "version": "2.1.0",
-    "sha512": "47ecf536b997a6d6c0ea66825553dc27dc6b0a3519146116d421d0782a8ec919e2e8f17100d6238848c30402bbc1051d99d645cb7c4a258518d2a8696fe8522d"
+    "sha512": "23634001e3f27c0cd22e5fc05a680db38f77c494030ea9762dda71dcf465edf13e16bb207469951f2c9695f777768324c473ecb4e92a6151af48b6c8061cb3b2"
   },
   {
     "baseName": "NETStandard.Library",
     "version": "2.0.3",
-    "sha512": "47bde0123a82908d8dc3f22537c42f7203cd925a9088fa30a78ec9c2f5b4067a7f4599e337852b27012f59525644ad4cb10f8721f19ef62e1a4257caf9e8bd8c"
+    "sha512": "e78f0cea69c14895b1b089644077dbce8631a626055d96522f4d29e061d8bfc3e48aa1419e74faf265b998612c03f721f5f0cef4690f824150a5689764dee601"
   }
 ]
