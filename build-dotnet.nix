@@ -1,44 +1,24 @@
-{ fetchurl, dotnet-sdk, stdenv }:
-{
-  baseName
+{ dotnet-sdk, stdenv, makeWrapper }:
+{ baseName
   , version
   , src
-  , nugetsFile ? ./nugets.json
-  , feedUrlsFile ? ./urls.json
-  , defaultFeedUrl ? "https://www.nuget.org/api/v2"
-  , netrc-file ? null
-}:
-let
-    myFetchurl = if netrc-file == null
-                 then fetchurl
-                 else args: fetchurl (args // {
-                      curlOpts = "--netrc-file ${netrc-file}";
-                    });
-    feedUrls = if builtins.pathExists feedUrlsFile
-               then builtins.fromJSON (builtins.readFile feedUrlsFile )
-               else [ defaultFeedUrl ];
-    getUrls = baseName: version: urls:
-              if urls != null
-              then urls
-              else map (base: "${base}/package/${baseName}/${version}" ) feedUrls;
-    fetchNuPkg = ({
-      baseName
-      , version
-      , urls ? null
-      , sha512
-      }: myFetchurl {
-          inherit sha512;
-          urls = getUrls baseName version urls;
-          name = "${baseName}.${version}.nupkg";
-    });
+  , additionalWrapperArgs ? ""
+  , nugetsFile ? ./nugets.json }:
+let fetchurl = import <nix/fetchurl.nix>;
+    fetchNuPkg = 
+      { url , name , sha512, ... }:
+      fetchurl {
+          inherit sha512 url;
+          name = "${name}.${version}.nupkg";
+    };
     nugetInfos = builtins.fromJSON (builtins.readFile nugetsFile );
-    nugetsList = map (n: fetchNuPkg n) nugetInfos;
+    nugets = map (n: fetchNuPkg n) nugetInfos;
 in
 stdenv.mkDerivation rec {
   name = "${baseName}-${version}";
-  buildInputs =  [ dotnet-sdk ];
-  nugets = map (n: "${n}:${n.name}") nugetsList;
-  src = ./. ;
+  nativeBuildInputs =  [ dotnet-sdk makeWrapper ];
+  inherit src;
+  nugetsWithFileName = map (n: "${n}:${n.name}") nugets;
   buildPhase = ''
     runHook preBuild
 
@@ -47,18 +27,14 @@ stdenv.mkDerivation rec {
     # avoid permission denied error
     export HOME=$PWD
 
-    mkdir packages
-    cd packages
-    for p in $nugets; do
-      pstore=$(echo $p|cut -f1 -d:)
-      plink=$(echo $p|cut -f2 -d:)
-      ln -s $pstore $plink
+    mkdir -p packages
+    for n in $nugetsWithFileName; do
+        ln -s `echo $n|cut -f1 -d:` packages/`echo $n | cut -f2 -d:`
     done
-    cd ..
 
-    echo Running dotnet restore
+    echo "Running dotnet restore"
     dotnet restore --source $PWD/packages
-    echo Running dotnet build
+    echo "Running dotnet build"
     dotnet build --no-restore
 
     runHook postBuild
@@ -73,12 +49,8 @@ stdenv.mkDerivation rec {
 
     echo Creating wrapper
     mkdir $out/bin
-    cat << EOF >> $out/bin/${baseName}
-    #!/bin/sh
-    ${dotnet-sdk}/bin/dotnet $out/${baseName}.dll -- "$@"
-    EOF
+    makeWrapper ${dotnet-sdk}/bin/dotnet $out/bin/${baseName} --add-flags $out/${baseName}.dll ${additionalWrapperArgs}
     chmod +x $out/bin/${baseName}
     runHook postInstall
   '';
-
 }

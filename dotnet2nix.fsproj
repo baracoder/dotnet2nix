@@ -10,7 +10,15 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="FSharp.Data" Version="3.0.0-beta4" />
+      <PackageReference Include="Argu" Version="5.2.0" />
+      <PackageReference Include="FSharp.Data" Version="3.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.2.0" />
+      <PackageReference Include="NuGet.Client" Version="4.2.0" />
+      <PackageReference Include="NuGet.Client.V3" Version="1.0.1-pre-20150112215546" />
+      <PackageReference Include="NuGet.Configuration" Version="4.9.3" />
+      <PackageReference Include="NuGet.Packaging" Version="4.9.3" />
+      <PackageReference Include="NuGet.ProjectManagement" Version="4.2.0" />
+      <PackageReference Include="NuGet.ProjectModel" Version="4.9.3" />
     </ItemGroup>
 
     <ItemGroup>
