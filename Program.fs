@@ -1,29 +1,19 @@
 ﻿open Argu
 open System
 open System.IO
-open System.Threading
-open FSharp.Data
-open NuGet.Common
-open NuGet.Configuration
-open NuGet.Frameworks
-open NuGet.ProjectModel
-open NuGet.Protocol
-open NuGet.Protocol.Core.Types
-open NuGet.Versioning
 
-
-type PkgInfo = {
-    Name: string
-    Version: string
-    Sha512: string
-    SourceUrls: string list
-    Frameworks: NuGetFramework list }
+open dotnet2nix
+open dotnet2nix.Types
+open dotnet2nix.Utils
 
 
 type CLIArguments =
     | [<AltCommandLine("-f")>] ReplaceBuilder
     | [<AltCommandLine("-n")>] NoCache
+    | [<AltCommandLine("-p")>] PackagesFolder
     | [<AltCommandLine("-l")>] LockFilePath of path:string
+    | NoParallel
+    | [<MainCommand>] TargetPath of target:string
 with
     interface IArgParserTemplate with
         member s.Usage =
@@ -31,95 +21,60 @@ with
             | ReplaceBuilder -> "Replace build-dotnet.nix with default one."
             | NoCache -> "Use NoCache while getting metadata (Not sure, but probably only http level)."
             | LockFilePath _ -> "Path to lockfile (project.assets.json)."
-
-let (+/) p1 p2 = Path.Combine(p1, p2)
-let b64ToBytes s = System.Convert.FromBase64String(s)
-let b64ToHex s = (s |> Convert.FromBase64String |> BitConverter.ToString).Replace("-", "").ToLowerInvariant()
-
-
-let getNugetInfo lockFilePath =
+            | TargetPath _ -> "Optional path to a directory containing a lockfile (project.assets.json), solution (.sln), C# project (.csproj) or F# project (.fsproj) to analyze."
+            | NoParallel -> "Don't make http requests in rarallel."
+            | PackagesFolder -> "Folder where nuget packages are stored, defaults to NUGET_PACKAGES environment variable or else  ~/.nuget/packages."
     
-    let logger = NuGet.Common.NullLogger()
-    let lockfile = LockFileUtilities.GetLockFile(lockFilePath, logger)
-    let target = lockfile.Targets.Item 0
-    
-    lockfile.Libraries
-    |> Seq.map (fun lib -> {
-        Name = lib.Name
-        Version = lib.Version.ToString()
-        Sha512 = b64ToHex lib.Sha512
-        SourceUrls = []
-        Frameworks = lockfile.Targets |> Seq.map (fun t ->  t.TargetFramework) |> List.ofSeq })
-    |> Array.ofSeq
-    
-    
-let getSourceUrlForPackage sourceCacheContext package =
-    printf "Getting url for package %s ...\n" package.Name
-    let config = NuGet.Configuration.Settings.LoadDefaultSettings ("./")
-    let sources =
-        SettingsUtility.GetEnabledSources config
-        |> Array.ofSeq
-        |> Array.where (fun s -> not s.IsLocal)
-    let frameworks = package.Frameworks
-    
-    let getUrlsForSource s =
-        
-        let prov = Repository.Provider.GetCoreV3()
-        let sourceRepository = SourceRepository(s, prov)
-        
-        let depInfoResource = sourceRepository.GetResourceAsync<DependencyInfoResource>().Result
-        
-        depInfoResource.ResolvePackages(package.Name, frameworks.Item 0, sourceCacheContext, NullLogger.Instance, CancellationToken.None).Result
-        |> Seq.where (fun r -> r.Version.Equals(SemanticVersion.Parse(package.Version)))
-        |> Seq.map (fun i -> i.DownloadUri.AbsoluteUri)
-        
-    let urls = 
-        sources
-        |> Seq.collect getUrlsForSource
-    { package with
-        SourceUrls = urls |> List.ofSeq }
-    
-
-let pkgInfoAsJsonValue p =
-    [|
-      "name", JsonValue.String p.Name
-      "version", JsonValue.String p.Version // just for debugging
-      "sha512", JsonValue.String p.Sha512
-      "url", p.SourceUrls |> List.item 0 |> JsonValue.String 
-    |] 
-    |> JsonValue.Record
-    
-    
-let writeBuilderFile replace =
-    let builderFilename = "build-dotnet.nix"
-    if File.Exists builderFilename && not replace then 
-        printf "%s exists, not replacing.\n" builderFilename
-    else 
-        File.Copy(
-            AppDomain.CurrentDomain.BaseDirectory +/ builderFilename,
-            Environment.CurrentDirectory +/ builderFilename, true)
         
 
 [<EntryPoint>]
 let main argv =
     let parser = ArgumentParser.Create<CLIArguments>(programName = "dotnet2nix")
     let args = parser.Parse(argv)
-    let lockFilePath =
-        args.TryGetResult LockFilePath
-        |> Option.defaultValue (Environment.CurrentDirectory +/ "obj/project.assets.json")
+    let replaceArg = args.Contains ReplaceBuilder
+    let parallelRequests = if args.Contains NoParallel then 1 else 30
+    use nugetCache = Nuget.getCache (args.Contains(NoCache))
     
-    let pkgInfos = getNugetInfo lockFilePath
-    use sourceCacheContext = new SourceCacheContext(NoCache = args.Contains(NoCache))
-    
-    let packageDescriptions = 
-        pkgInfos
-        |> Array.Parallel.map (getSourceUrlForPackage sourceCacheContext)
-        |> Array.map pkgInfoAsJsonValue
-        |> JsonValue.Array
+    let targetPath =
+        args.TryGetResult TargetPath
+        |> Option.defaultValue Environment.CurrentDirectory
+        |> Path.GetFullPath
+    let targetDirectory = if File.Exists(targetPath) then Path.GetDirectoryName(targetPath) else targetPath
         
-    use f = File.CreateText("nugets.json")
-    packageDescriptions.WriteTo (f, JsonSaveOptions.None)
+    let nugetSettings = NuGet.Configuration.Settings.LoadDefaultSettings (targetDirectory)
+    let sources = Nuget.getSources nugetSettings
     
-    let replace = args.Contains ReplaceBuilder
-    writeBuilderFile replace
-    0
+    let packagesDirectory =
+        let env = Environment.GetEnvironmentVariable("NUGET_PACKAGES")
+        if env <> null && env <> String.Empty then
+            env
+        else
+            Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) +/ ".nuget" +/ "packages"
+        
+    // general flow: Target -> lockfile list -> PackageInfo list -> DownloadInfo list -> JsonValue
+    // 1. discover project or solution and get configuration
+    // 2. Collect package information: Name, Version, Framework, Sha512
+    // 3. Get download urls
+    // 4. Write file
+    result {
+        let! target = Nuget.discoverTarget targetPath
+        let lockfiles = Nuget.getLockfilesForTarget packagesDirectory target
+        let packageInfos =
+            lockfiles
+            |> Seq.collect Nuget.getNugetInfo
+            |> Seq.distinct
+            
+        let! downloadInfos =
+            Nuget.getDownloadInfos sources nugetCache parallelRequests packageInfos
+            |> Result.map Seq.distinct
+        let! writeFileResult = NugetsFile.writeNugets replaceArg downloadInfos
+        return writeFileResult
+    }
+    |> function
+    | Ok msg ->
+        printfn "%s" msg
+        0
+    | Error msg ->
+        eprintf "Error: %s" msg
+        1
+            

@@ -3,13 +3,14 @@
   , version
   , src
   , additionalWrapperArgs ? ""
+  , mono ? ""
   , nugetsFile ? ./nugets.json }:
 let fetchurl = import <nix/fetchurl.nix>;
     fetchNuPkg = 
-      { url , name , sha512, ... }:
+      { url , fileName , sha512, ... }:
       fetchurl {
           inherit sha512 url;
-          name = "${name}.${version}.nupkg";
+          name = "${fileName}.nupkg";
     };
     nugetInfos = builtins.fromJSON (builtins.readFile nugetsFile );
     nugets = map (n: fetchNuPkg n) nugetInfos;
@@ -17,10 +18,14 @@ in
 stdenv.mkDerivation rec {
   name = "${baseName}-${version}";
   nativeBuildInputs =  [ dotnet-sdk makeWrapper ];
-  inherit src;
+  inherit src mono;
   nugetsWithFileName = map (n: "${n}:${n.name}") nugets;
   buildPhase = ''
     runHook preBuild
+    
+    if [ "$mono" != "" ]; then
+    export FrameworkPathOverride=${mono}/lib/mono/4.5/
+    fi
 
     export DOTNET_CLI_TELEMETRY_OPTOUT=true
     export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true

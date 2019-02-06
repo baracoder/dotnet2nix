@@ -3,15 +3,23 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp2.1</TargetFramework>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <NoWarn>NU1608,NU1701,NU1603</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Types.fs" />
+        <Compile Include="Utils.fs" />
+        <Compile Include="Nuget.fs" />
+        <Compile Include="NugetsFile.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Argu" Version="5.2.0" />
+      <PackageReference Include="FSharp.Collections.ParallelSeq" Version="1.1.2" />
       <PackageReference Include="FSharp.Data" Version="3.0.0" />
+      <PackageReference Include="Microsoft.Build" Version="15.9.20" />
       <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.2.0" />
       <PackageReference Include="NuGet.Client" Version="4.2.0" />
       <PackageReference Include="NuGet.Client.V3" Version="1.0.1-pre-20150112215546" />
@@ -19,6 +27,7 @@
       <PackageReference Include="NuGet.Packaging" Version="4.9.3" />
       <PackageReference Include="NuGet.ProjectManagement" Version="4.2.0" />
       <PackageReference Include="NuGet.ProjectModel" Version="4.9.3" />
+      <PackageReference Include="NuGet.Protocol" Version="4.9.3" />
     </ItemGroup>
 
     <ItemGroup>
@@ -26,7 +35,6 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <Content Include="default.nix" />
-      <Content Include="example-project.assets.json" />
       <Content Include="README.md" />
     </ItemGroup>
 

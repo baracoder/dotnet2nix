@@ -1,518 +1,522 @@
 [
   {
-    "name": "Argu",
-    "version": "5.2.0",
+    "fileName": "Argu.5.2.0",
     "sha512": "5b20178c91e1d3dd556189b32be00eb069f38f57e0f79bffca84a3c9e871622ae4eea1f8a437e0cb6a2e918410241f1b3a873cb1d51084b5ae498225e3392f62",
     "url": "https://www.nuget.org/api/v2/package/Argu/5.2.0"
   },
   {
-    "name": "FSharp.Core",
-    "version": "4.5.2",
+    "fileName": "FSharp.Collections.ParallelSeq.1.1.2",
+    "sha512": "a036e7f127cb04c7cda2ab0a1d3ac1013703723e8e5bb73925310aba9d210e9abd039ebe2a0a533ee6d7b159162c1d00f72f1eeafc31d4a2cc8ef88e62a43f31",
+    "url": "https://www.nuget.org/api/v2/package/FSharp.Collections.ParallelSeq/1.1.2"
+  },
+  {
+    "fileName": "FSharp.Core.4.5.2",
     "sha512": "3dedc40e9f680634377377ef64026cc3b5c52c71024b7ce7dcfecc4aab09cb7b05611ea3bd3831c6708579e3d1d491e25b26776e6f916408dc86a55893ad5a74",
     "url": "https://www.nuget.org/api/v2/package/FSharp.Core/4.5.2"
   },
   {
-    "name": "FSharp.Data",
-    "version": "3.0.0",
+    "fileName": "FSharp.Data.3.0.0",
     "sha512": "4a8196331776d9b0ea016b73a97e61782c0c4d2721472ccd806d88b73a0f2e2ea238ec7376d2de59d3e6577b0c769c29d958167b2caa1c197acd9d2cfb6421bc",
     "url": "https://www.nuget.org/api/v2/package/FSharp.Data/3.0.0"
   },
   {
-    "name": "Microsoft.Bcl",
-    "version": "1.1.9",
+    "fileName": "Microsoft.Bcl.1.1.9",
     "sha512": "fd58057a0436eb4d2f2888b053a3697bf0c1b4572903ead1ea514ccd89226e621470b091803460a11a18b41f6d5ad414d0a3e29e621c9dbfd030745d93534ad3",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Bcl/1.1.9"
   },
   {
-    "name": "Microsoft.Bcl.Build",
-    "version": "1.0.14",
+    "fileName": "Microsoft.Bcl.Build.1.0.14",
     "sha512": "4d5162d249693dcbeab4ff7c78e63ad542cf070dc015cc2b9ee30001d9216d8b9b32441afd31cf2564985e80d263feee876a140c29f8d4d77edc4a543736d9a5",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Bcl.Build/1.0.14"
   },
   {
-    "name": "Microsoft.CSharp",
-    "version": "4.0.1",
+    "fileName": "Microsoft.Build.15.9.20",
+    "sha512": "a8436c8570933a64ee9e2de41ab68b5244918310889924a1ecf221cc56ad73700c55c631f02408c9f772cdb2f2c247b611a5868ed56533dd86c8dd8c133cca40",
+    "url": "https://www.nuget.org/api/v2/package/Microsoft.Build/15.9.20"
+  },
+  {
+    "fileName": "Microsoft.Build.Framework.15.9.20",
+    "sha512": "0bb677db0870b599212039bcaee43d4cec91e22118248be26c7f2ce2e9ec421ecd89a2f5aa796bc730026d77f0d66619523e522f2b65803d193fd51007b2aef8",
+    "url": "https://www.nuget.org/api/v2/package/Microsoft.Build.Framework/15.9.20"
+  },
+  {
+    "fileName": "Microsoft.CSharp.4.0.1",
     "sha512": "c0e75a9162f28ba4c4572c8fac4fd4c8c97d6d3505a37683646ba5f7e5f6ac0da69d5200d2646054de90e8e08f893a10e514591b69b8273640842b2cf90bddec",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.CSharp/4.0.1"
   },
   {
-    "name": "Microsoft.Extensions.Configuration",
-    "version": "2.2.0",
+    "fileName": "Microsoft.Extensions.Configuration.2.2.0",
     "sha512": "d0cb49802679b48c3b2e8c4e9579627f0553c1f31de1874c27df83559c97fdfaaa5cef73b1e67c847d96c5b2730db043a78e6703caf01e52f8247ffa67df01e3",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.Configuration/2.2.0"
   },
   {
-    "name": "Microsoft.Extensions.Configuration.Abstractions",
-    "version": "2.2.0",
+    "fileName": "Microsoft.Extensions.Configuration.Abstractions.2.2.0",
     "sha512": "33abb870c597c4fb6ac89274de87b3caa4ce4664a04cfa5ada06512a41060975c78721a73357078cf4f3ab9b1ebd84b554910c6f64d98fad2601cfa10e83cf71",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.Configuration.Abstractions/2.2.0"
   },
   {
-    "name": "Microsoft.Extensions.Configuration.Binder",
-    "version": "2.2.0",
+    "fileName": "Microsoft.Extensions.Configuration.Binder.2.2.0",
     "sha512": "e803704ee419a8822dd20b8a01d4bd327e9cf8f7e1381a6a466ec5b25509aad1b4d34ba8d02777a409dd93dd9142ad32803151b9bfdfb62472f03ba4597a8dcd",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.Configuration.Binder/2.2.0"
   },
   {
-    "name": "Microsoft.Extensions.DependencyInjection.Abstractions",
-    "version": "2.2.0",
+    "fileName": "Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0",
     "sha512": "db1324f4b1f3d4463eee0546d251b8a81be452256383c40d3ea7761d89843f9f8f2fb032a3de8484189e02177ef86c78c8cfb137c90daa68597453011de1b41d",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.DependencyInjection.Abstractions/2.2.0"
   },
   {
-    "name": "Microsoft.Extensions.Logging",
-    "version": "2.2.0",
+    "fileName": "Microsoft.Extensions.Logging.2.2.0",
     "sha512": "c1ad5493cb15b84cc7b7064fa033614221438e50def6def8f887acb36eaeaa12309f4d93efdbff181fe92c2274f0c3afb8cf79dcb7e57895ba54faffc155c227",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.Logging/2.2.0"
   },
   {
-    "name": "Microsoft.Extensions.Logging.Abstractions",
-    "version": "2.2.0",
+    "fileName": "Microsoft.Extensions.Logging.Abstractions.2.2.0",
     "sha512": "d62613e8102725919e6df72541788cfddacaf89533b528a49294f7c5c0120505b8a20f3bedbb17b63aab30ce0423bd677fc515b6f1ede8ef2931d603104f3f2f",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.Logging.Abstractions/2.2.0"
   },
   {
-    "name": "Microsoft.Extensions.Logging.Configuration",
-    "version": "2.2.0",
+    "fileName": "Microsoft.Extensions.Logging.Configuration.2.2.0",
     "sha512": "f2e793c8ed51a95386abedc3640bbf5a0465de697f29abe1fa5d5fd71831fb60836bef1625e652f127e0230a953257d62f3aa4594edb0c20c9887d64333e2fa4",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.Logging.Configuration/2.2.0"
   },
   {
-    "name": "Microsoft.Extensions.Logging.Console",
-    "version": "2.2.0",
+    "fileName": "Microsoft.Extensions.Logging.Console.2.2.0",
     "sha512": "eaa0bdfc595e02a2f5ca8f6cfafc8b9608c441060f40a9cf516ccdb1f7c30c5f7e44bc1cd2e189191bc4e0ffb3b0d51e61b98470ec20634cf0e78406444f263a",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.Logging.Console/2.2.0"
   },
   {
-    "name": "Microsoft.Extensions.Options",
-    "version": "2.2.0",
+    "fileName": "Microsoft.Extensions.Options.2.2.0",
     "sha512": "ebbce9bc4943fd83dc7d1b35426e7c2d29ed9d29be918480fb43c0e3ed006e8ecd107e1102f524579e24aeca6c6b4f92e32059fe6dfd81439d9f73d2cdf7dacd",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.Options/2.2.0"
   },
   {
-    "name": "Microsoft.Extensions.Options.ConfigurationExtensions",
-    "version": "2.2.0",
+    "fileName": "Microsoft.Extensions.Options.ConfigurationExtensions.2.2.0",
     "sha512": "d4689c22c41d90b955af7c20188567cd42ae34bf55dcd61590c517af6ad0ef154e971358a7b99cae736b5354b5548e89d7e26c926ecba5241793c04f2159d40a",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.Options.ConfigurationExtensions/2.2.0"
   },
   {
-    "name": "Microsoft.Extensions.Primitives",
-    "version": "2.2.0",
+    "fileName": "Microsoft.Extensions.Primitives.2.2.0",
     "sha512": "be91fea3b7fca1b571eb93e212d057c53c0be51a2c2bad1f348332ff2f16184e3faf822f02a406ba43b3321c6ca7ffc071cbddee49ae932413564a9561d683c8",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.Primitives/2.2.0"
   },
   {
-    "name": "Microsoft.Net.Http",
-    "version": "2.2.28",
-    "sha512": "92d876402fce03cb86b9dbc10dec94b73e9fc8de8b5fc7e809052751013e19c3a8a645483ccdf12ed196f15b6e02ee26fb44ac355797efccfc6948f669eeec79",
-    "url": "https://www.nuget.org/api/v2/package/Microsoft.Net.Http/2.2.28"
-  },
-  {
-    "name": "Microsoft.NETCore.App",
-    "version": "2.1.0",
+    "fileName": "Microsoft.NETCore.App.2.1.0",
     "sha512": "d83b514e902151d68f0e704cd51e136e5d61c4b5bedcbe3f6f23289c8fbb68040f15199578a7357a998ce30a7103887513bb8aead48f381394edff8c0dc63906",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.NETCore.App/2.1.0"
   },
   {
-    "name": "Microsoft.NETCore.DotNetAppHost",
-    "version": "2.1.0",
+    "fileName": "Microsoft.NETCore.DotNetAppHost.2.1.0",
     "sha512": "719880484f35ae4b0f26c189d3885dfee127ea0b8d180a2a36caf313f0cfe8068d44f087c137ba9d9bc7778b803e3dcc695450dd4d1ce9c47270c6870982cf51",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.NETCore.DotNetAppHost/2.1.0"
   },
   {
-    "name": "Microsoft.NETCore.DotNetHostPolicy",
-    "version": "2.1.0",
+    "fileName": "Microsoft.NETCore.DotNetHostPolicy.2.1.0",
     "sha512": "2dd8525941199856a5873e9f2c113958398274ef63aaf5b9ab709439393d9ff85d9a6c274eeecaa303cf230e69dadd6f9fba334ad2c6dd164c25b7f8f1fed6b4",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.NETCore.DotNetHostPolicy/2.1.0"
   },
   {
-    "name": "Microsoft.NETCore.DotNetHostResolver",
-    "version": "2.1.0",
+    "fileName": "Microsoft.NETCore.DotNetHostResolver.2.1.0",
     "sha512": "fbd0fb1b9f45cf51f664ef3b1e5825ed9bf8e01ac09969f245faaba1fac75b88104eee7bdf140fe9cb9888d51eaabd7cf5e1fa859ba1e4c29484ea141898ea89",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.NETCore.DotNetHostResolver/2.1.0"
   },
   {
-    "name": "Microsoft.NETCore.Platforms",
-    "version": "2.1.0",
+    "fileName": "Microsoft.NETCore.Platforms.2.1.0",
     "sha512": "1a690a7e8c9eaea9ac1cc9fb3998f400aa5c05a6c3f8669a7eaa61bd7d8cc38d3a230889472d6929c2aa7427ca25f626911c89ebe7be45a532960749a036b58d",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.NETCore.Platforms/2.1.0"
   },
   {
-    "name": "Microsoft.NETCore.Targets",
-    "version": "2.1.0",
+    "fileName": "Microsoft.NETCore.Targets.2.1.0",
     "sha512": "23634001e3f27c0cd22e5fc05a680db38f77c494030ea9762dda71dcf465edf13e16bb207469951f2c9695f777768324c473ecb4e92a6151af48b6c8061cb3b2",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.NETCore.Targets/2.1.0"
   },
   {
-    "name": "Microsoft.Win32.Primitives",
-    "version": "4.3.0",
+    "fileName": "Microsoft.Net.Http.2.2.28",
+    "sha512": "92d876402fce03cb86b9dbc10dec94b73e9fc8de8b5fc7e809052751013e19c3a8a645483ccdf12ed196f15b6e02ee26fb44ac355797efccfc6948f669eeec79",
+    "url": "https://www.nuget.org/api/v2/package/Microsoft.Net.Http/2.2.28"
+  },
+  {
+    "fileName": "Microsoft.Win32.Primitives.4.3.0",
     "sha512": "366f07a79d72f6d61c2b7c43eaa938dd68dfb6b83599d1f6e02089b136fa82bec74b6d54d6e03e08a3c612d51c5596e3535cbc2b29f39b97a827b3e7c79826f0",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Win32.Primitives/4.3.0"
   },
   {
-    "name": "Microsoft.Win32.Registry",
-    "version": "4.3.0",
+    "fileName": "Microsoft.Win32.Registry.4.3.0",
     "sha512": "38702f72eead561e343e77136059292c8b6cc3d3bcb14739f42e1ea92a8477e539ad8eedd3ebbb5e88ba330d9039fbcf2761d4265c08115ab19250c87e7ef9ed",
     "url": "https://www.nuget.org/api/v2/package/Microsoft.Win32.Registry/4.3.0"
   },
   {
-    "name": "NETStandard.Library",
-    "version": "2.0.3",
+    "fileName": "NETStandard.Library.2.0.3",
     "sha512": "e78f0cea69c14895b1b089644077dbce8631a626055d96522f4d29e061d8bfc3e48aa1419e74faf265b998612c03f721f5f0cef4690f824150a5689764dee601",
     "url": "https://www.nuget.org/api/v2/package/NETStandard.Library/2.0.3"
   },
   {
-    "name": "Newtonsoft.Json",
-    "version": "9.0.1",
+    "fileName": "Newtonsoft.Json.9.0.1",
     "sha512": "da8917a5347051c8106f4ea9bade4bc300a3b60a05a3be3390f92c8dcbcea67223c7b4da8065b9228042000e25b99c75fad7e2221a0daa8888ed8ef3c161b228",
     "url": "https://www.nuget.org/api/v2/package/Newtonsoft.Json/9.0.1"
   },
   {
-    "name": "NuGet.Client",
-    "version": "4.2.0",
+    "fileName": "NuGet.Client.4.2.0",
     "sha512": "b0294f1c75fd1525acd5242d33334b76b66a234c02e2964686fec53308a7bf75d2a2cecbc7b66a9fdeb149a7009cada61af89b0bf907a1ecf595c810f9ccc2b6",
     "url": "https://www.nuget.org/api/v2/package/NuGet.Client/4.2.0"
   },
   {
-    "name": "NuGet.Client.BaseTypes",
-    "version": "0.2.0-pre-20150112215135",
+    "fileName": "NuGet.Client.BaseTypes.0.2.0-pre-20150112215135",
     "sha512": "e944b065732f8c128f289b2f34399f7c87cff8e956b4b5b93382a0b1e8e74ff764941ee650d693c7f2985395e7a40995009cb89408af52fb0342f593ca84627b",
     "url": "https://www.nuget.org/api/v2/package/NuGet.Client.BaseTypes/0.2.0-pre-20150112215135"
   },
   {
-    "name": "NuGet.Client.V3",
-    "version": "1.0.1-pre-20150112215546",
+    "fileName": "NuGet.Client.V3.1.0.1-pre-20150112215546",
     "sha512": "6604711968e28303e1d7a1cb937f3fb3184c4eb1302a2b893dba159bcdd79c904032a881927789708de718ae8edf96e4245d7b3586fa5bec078cc66e95b96cbb",
     "url": "https://www.nuget.org/api/v2/package/NuGet.Client.V3/1.0.1-pre-20150112215546"
   },
   {
-    "name": "NuGet.Common",
-    "version": "4.9.3",
+    "fileName": "NuGet.Common.4.9.3",
     "sha512": "b090dd995c0b799e5978c79b4da2b2544cfb08cff1515b518590fdf460e19b9cb3b031f9c5154415f691850649b2021a3a47b7671089996b3b6b174e150337ac",
     "url": "https://www.nuget.org/api/v2/package/NuGet.Common/4.9.3"
   },
   {
-    "name": "NuGet.Configuration",
-    "version": "4.9.3",
+    "fileName": "NuGet.Configuration.4.9.3",
     "sha512": "e22ebb49dd15ef4edd3300a01d16445c41427e416f37c47fa518965a34d78c9097f907e21d48b95799c6e7979ced62e57c2da3ed53737ce62a7ee8ea6433c910",
     "url": "https://www.nuget.org/api/v2/package/NuGet.Configuration/4.9.3"
   },
   {
-    "name": "NuGet.ContentModel",
-    "version": "4.2.0",
+    "fileName": "NuGet.ContentModel.4.2.0",
     "sha512": "e3c98df6d73d95411b821178bba8c3aae8b1774bea8c8d799483fcae56747568059c30e2317da2283b631d9e994a8f95dc22175109771c44164499ddb73f896e",
     "url": "https://www.nuget.org/api/v2/package/NuGet.ContentModel/4.2.0"
   },
   {
-    "name": "NuGet.DependencyResolver.Core",
-    "version": "4.9.3",
+    "fileName": "NuGet.DependencyResolver.Core.4.9.3",
     "sha512": "030bfad9ee979628ff8fba761b8e04296ddf4724532b27ad24049763627b907f48da1187b03ebe889a14f67d68352fff54e7687d7e74d3fccae0b951b5ca6ba5",
     "url": "https://www.nuget.org/api/v2/package/NuGet.DependencyResolver.Core/4.9.3"
   },
   {
-    "name": "NuGet.Frameworks",
-    "version": "4.9.3",
+    "fileName": "NuGet.Frameworks.4.9.3",
     "sha512": "2dd60ac65e0277df0a7c127a62f0e98c3b308e7bfcb8f0821aadfd914c296bfb2816bdc79a179671608d3824d0970c65e78501f11bb3d62d4edb1ffecf900d25",
     "url": "https://www.nuget.org/api/v2/package/NuGet.Frameworks/4.9.3"
   },
   {
-    "name": "NuGet.LibraryModel",
-    "version": "4.9.3",
+    "fileName": "NuGet.LibraryModel.4.9.3",
     "sha512": "c4932618341bd1c235fcc436d00a297b04d275c96a44304c6c938e9faec657a92fd7b5a7e13d75751f435964ee670af3334d57b8fa1464b64823370e3f96d6e3",
     "url": "https://www.nuget.org/api/v2/package/NuGet.LibraryModel/4.9.3"
   },
   {
-    "name": "NuGet.Packaging",
-    "version": "4.9.3",
+    "fileName": "NuGet.Packaging.4.9.3",
     "sha512": "9466084d8abb41490856f1ed21ee22f066828de18bc604120dd71ac30da4837c16c2e6e0af4cae9841d79b1d0ce1360ed1f763a7b68cfef7e8b23481aeab70a6",
     "url": "https://www.nuget.org/api/v2/package/NuGet.Packaging/4.9.3"
   },
   {
-    "name": "NuGet.Packaging.Core",
-    "version": "4.9.3",
+    "fileName": "NuGet.Packaging.Core.4.9.3",
     "sha512": "3e4505836f6d7f02f0e0bcf74894229a326fc68bd0fe5d0904fd963c33c961a735e77fc75dbe58c07c25c9deb741a9fa2397b62e513da58cc3ba954a64913810",
     "url": "https://www.nuget.org/api/v2/package/NuGet.Packaging.Core/4.9.3"
   },
   {
-    "name": "NuGet.ProjectManagement",
-    "version": "4.2.0",
+    "fileName": "NuGet.ProjectManagement.4.2.0",
     "sha512": "70cfb0fb74492f2a102b0f7cb3b2ecb3fd33f4a1ffaca8b06a6ae2881308e7a5210f4c9de307bafad0ac4ec0996a13a6100df00b3040d1b283eb8e23bbaa0b98",
     "url": "https://www.nuget.org/api/v2/package/NuGet.ProjectManagement/4.2.0"
   },
   {
-    "name": "NuGet.ProjectModel",
-    "version": "4.9.3",
+    "fileName": "NuGet.ProjectModel.4.9.3",
     "sha512": "5cb1fecc473c4d5295cf2c293593ca77652a8b1badb4465c12879e8a0968c2d1613711f83a7b2e0ed376fd91c83dd4a5a0186fd1c7839f61a04bf750a2d89538",
     "url": "https://www.nuget.org/api/v2/package/NuGet.ProjectModel/4.9.3"
   },
   {
-    "name": "NuGet.Protocol",
-    "version": "4.9.3",
+    "fileName": "NuGet.Protocol.4.9.3",
     "sha512": "8814671fe452b07b9eb0c8bd6be1d5ede952dc374855f656d65f37477568bbf6dda03df3317ef24b4ab23b40d496bde6c1a518d9619746895c20d73d51105eff",
     "url": "https://www.nuget.org/api/v2/package/NuGet.Protocol/4.9.3"
   },
   {
-    "name": "NuGet.Repositories",
-    "version": "4.2.0",
+    "fileName": "NuGet.Repositories.4.2.0",
     "sha512": "67aeb920a2fb4ac735c9636bc89041c985f6b4b65f721a30ed42017d841109f64c8d0fa3e2a51781bb701ebf5c0dd894c18e4016fdac42363f3fdd32cb0869c0",
     "url": "https://www.nuget.org/api/v2/package/NuGet.Repositories/4.2.0"
   },
   {
-    "name": "NuGet.RuntimeModel",
-    "version": "4.2.0",
+    "fileName": "NuGet.RuntimeModel.4.2.0",
     "sha512": "b33bd178532556dfd0290fe7074c6c10de0a9de0f4448893432d202b10f302a07e9310cda30fdfab4d7dc1b049dc9f77956b90d7f1f7e98d2278bbf92e06cf6f",
     "url": "https://www.nuget.org/api/v2/package/NuGet.RuntimeModel/4.2.0"
   },
   {
-    "name": "NuGet.Versioning",
-    "version": "4.9.3",
+    "fileName": "NuGet.Versioning.4.9.3",
     "sha512": "be40cc57c775270c07acd8cfa715e98825f3c2a1423ba733a6719ed1a76478b91aaf13f51af5ebc9688a775791bade0d3185251595a9024316d71e45dc84b86a",
     "url": "https://www.nuget.org/api/v2/package/NuGet.Versioning/4.9.3"
   },
   {
-    "name": "runtime.native.System",
-    "version": "4.3.0",
-    "sha512": "299c5a96fffdcaf1972e3e3d1c727837d18ac9e88cb79c09914f12ff1de7280dff10c9232a49a1c1d3ba7785a5cf76f28c9dce414f0a2a567688de7fd5331dc8",
-    "url": "https://www.nuget.org/api/v2/package/runtime.native.System/4.3.0"
+    "fileName": "System.Buffers.4.3.0",
+    "sha512": "3dcbf66f6edf7e9bb4f698cddcf81b9d059811d84e05c7ac618b2640efed642f089b0ef84c927c5f58feffe43bb96a6bcf4fec422529b82998b18d70e4648cbe",
+    "url": "https://www.nuget.org/api/v2/package/System.Buffers/4.3.0"
   },
   {
-    "name": "System.Collections",
-    "version": "4.3.0",
+    "fileName": "System.Collections.4.3.0",
     "sha512": "ca7b952d30da1487ca4e43aa522817b5ee26e7e10537062810112fc67a7512766c39d402f394bb0426d1108bbcf9bbb64e9ce1f5af736ef215a51a35e55f051b",
     "url": "https://www.nuget.org/api/v2/package/System.Collections/4.3.0"
   },
   {
-    "name": "System.ComponentModel.Annotations",
-    "version": "4.5.0",
+    "fileName": "System.Collections.Concurrent.4.3.0",
+    "sha512": "35c1aa3e636216fe5dc2ebeb504293e69ad6355d26e22453af060af94d8279faa93bdcfe127aecb0b316c7e7d9185bcac72e994984efdb7f2d8515f1f55cf682",
+    "url": "https://www.nuget.org/api/v2/package/System.Collections.Concurrent/4.3.0"
+  },
+  {
+    "fileName": "System.Collections.Immutable.1.5.0",
+    "sha512": "4f95c64257078443bbe50c77f061825033dd9389ffef2ad1993832e32733cc957c6a53c76b13d4e794c10b6505ae4438d9bbb7e2c64f7cad1d53e9d665438424",
+    "url": "https://www.nuget.org/api/v2/package/System.Collections.Immutable/1.5.0"
+  },
+  {
+    "fileName": "System.ComponentModel.Annotations.4.5.0",
     "sha512": "7f5029507196abf9490bc3d913b26a6c0ded898ed99e06503b699b61f086d0995055552aaa654c032d1f32f03012e1badfd338ec42dd3fa3d0c5ce4e228ea2e8",
     "url": "https://www.nuget.org/api/v2/package/System.ComponentModel.Annotations/4.5.0"
   },
   {
-    "name": "System.Configuration.ConfigurationManager",
-    "version": "4.4.0",
+    "fileName": "System.Configuration.ConfigurationManager.4.4.0",
     "sha512": "44b601dd83a6773f5d137ccc841146bf7185ef8ba91a31f49c5d06f6514544b34bb0210c2298ae42c306bf6a84d2a769d4976179534ef11211a5429da2488afa",
     "url": "https://www.nuget.org/api/v2/package/System.Configuration.ConfigurationManager/4.4.0"
   },
   {
-    "name": "System.Diagnostics.Debug",
-    "version": "4.3.0",
+    "fileName": "System.Diagnostics.Debug.4.3.0",
     "sha512": "6c58fe1e3618e7f87684c1cea7efc7d3b19bd7df8d2535f9e27b62c52f441f11b67b21225d6bcd62f409e02c2a16231c4db19be33b8fab5b9b0a5c8660ddab24",
     "url": "https://www.nuget.org/api/v2/package/System.Diagnostics.Debug/4.3.0"
   },
   {
-    "name": "System.Diagnostics.Process",
-    "version": "4.3.0",
+    "fileName": "System.Diagnostics.Process.4.3.0",
     "sha512": "805bc86a25b1b77dc49f7a14564cd2614ccaa0e9bc69b57c21b339dc73ce7cb6412c3f7245d0f1bea46284aff5c92464169e4d6485dde1c616b18d326e7bc036",
     "url": "https://www.nuget.org/api/v2/package/System.Diagnostics.Process/4.3.0"
   },
   {
-    "name": "System.Diagnostics.Tools",
-    "version": "4.0.1",
+    "fileName": "System.Diagnostics.Tools.4.0.1",
     "sha512": "a812ccbbdd0a66eb57075121ea6332a526803ef883ca9f8b06431d6668ad50efd13624fa87dfaf6aed03c652f795c2ffb9fa9d9895a2fafa96eca614cbf86cdb",
     "url": "https://www.nuget.org/api/v2/package/System.Diagnostics.Tools/4.0.1"
   },
   {
-    "name": "System.Dynamic.Runtime",
-    "version": "4.3.0",
+    "fileName": "System.Diagnostics.TraceSource.4.0.0",
+    "sha512": "ab96c6cf3bd7562f9d20c88f591857655eebf8eb374c43ae456e4b1ec0140c6a6a247a25f1788ba24569b2001f3ea1c7364cb1d5b6efe65459a91911ac664ac5",
+    "url": "https://www.nuget.org/api/v2/package/System.Diagnostics.TraceSource/4.0.0"
+  },
+  {
+    "fileName": "System.Diagnostics.Tracing.4.3.0",
+    "sha512": "d0a5d30e261cd45b7dfab02b7ffbd76b64e0c9b892ed826ea61481c983c0208b05b69981cd79e91cd4e5811e1cd4c3cea06a1afce05811ece58be5e4c20169ea",
+    "url": "https://www.nuget.org/api/v2/package/System.Diagnostics.Tracing/4.3.0"
+  },
+  {
+    "fileName": "System.Dynamic.Runtime.4.3.0",
     "sha512": "54446fee94f432cb8fd38ec10c929a87b307a76f152a2e9da11ba99c41ceb0f65913cf218944990f0e122d4f858945091e9806c84c0285ada1fcc939337d30ea",
     "url": "https://www.nuget.org/api/v2/package/System.Dynamic.Runtime/4.3.0"
   },
   {
-    "name": "System.Globalization",
-    "version": "4.3.0",
+    "fileName": "System.Globalization.4.3.0",
     "sha512": "823d2ba308cb073b40a3146ecccd0d9fd7b1615ac3fbefb16f73d873e411fd81c3bdc87df206d3dc7e2f14c9cd53aafca684a3570c25471280aada8de805ece2",
     "url": "https://www.nuget.org/api/v2/package/System.Globalization/4.3.0"
   },
   {
-    "name": "System.IO",
-    "version": "4.3.0",
+    "fileName": "System.IO.4.3.0",
     "sha512": "bfca5a21e3e1986b9765b13dc6fbcd6f8b89e4c1383855d1d7ef256bf1bf2f51889769db5365859dd7606fbf6454add4daeb3bab56994ffb98fd1d03fe8bc1e6",
     "url": "https://www.nuget.org/api/v2/package/System.IO/4.3.0"
   },
   {
-    "name": "System.IO.FileSystem",
-    "version": "4.3.0",
+    "fileName": "System.IO.Compression.4.3.0",
+    "sha512": "f540ee51a3bb6941cdfbaace9a9738d7f7986a2f94770db61f45a88ecb7ef36b571d4c07417dc89cdbe9655a262b7cc599b0a4b78effea91819e186121b44807",
+    "url": "https://www.nuget.org/api/v2/package/System.IO.Compression/4.3.0"
+  },
+  {
+    "fileName": "System.IO.FileSystem.4.3.0",
     "sha512": "4fb581d6f85b9529a091a0e974633752aa39e50b2be6c8a9e5eca8c2bc225cea07064ccec7778f77df9987deebf4dccec050b1a97edac0ee9107142e6a8ee7ee",
     "url": "https://www.nuget.org/api/v2/package/System.IO.FileSystem/4.3.0"
   },
   {
-    "name": "System.IO.FileSystem.Primitives",
-    "version": "4.3.0",
+    "fileName": "System.IO.FileSystem.Primitives.4.3.0",
     "sha512": "5885953d09582cffd973d23a21a929064d72f2bc9518af3732d671fffcc628a8b686f1d058a001ee6a114023b3e48b3fc0d0e4b22629a1c7f715e03795ee9ee5",
     "url": "https://www.nuget.org/api/v2/package/System.IO.FileSystem.Primitives/4.3.0"
   },
   {
-    "name": "System.Linq",
-    "version": "4.3.0",
+    "fileName": "System.Linq.4.3.0",
     "sha512": "eacc7fe1ec526f405f5ba0e671f616d0e5be9c1828d543a9e2f8c65df4099d6b2ea4a9fa2cdae4f34b170dc37142f60e267e137ca39f350281ed70d2dc620458",
     "url": "https://www.nuget.org/api/v2/package/System.Linq/4.3.0"
   },
   {
-    "name": "System.Linq.Expressions",
-    "version": "4.3.0",
+    "fileName": "System.Linq.Expressions.4.3.0",
     "sha512": "61b90ef9ae6f779fbc8a7b6483ee8f5449cdd05c81b05235f70447e656a73b2aab7c341784b999f7532374744a72e2c3a5cd13800ea23417fac32ccfae5cde6d",
     "url": "https://www.nuget.org/api/v2/package/System.Linq.Expressions/4.3.0"
   },
   {
-    "name": "System.Memory",
-    "version": "4.5.1",
+    "fileName": "System.Memory.4.5.1",
     "sha512": "a289e72d03d90060f6d6ab4d306e04b5599b60e2279368d5eccfa0d74f01e8e1ce6faed939a5a703f2bc3f9a10eae2bdc312b30758845d20a140e8b6b1c28ea8",
     "url": "https://www.nuget.org/api/v2/package/System.Memory/4.5.1"
   },
   {
-    "name": "System.ObjectModel",
-    "version": "4.3.0",
+    "fileName": "System.ObjectModel.4.3.0",
     "sha512": "409bca3d2139bd1d003c711400ba2db5e576bb54d593aa541ec3576e7b2029b60159ab1c5b2c4e7389267b1b95ebcd8c2f064dc6e1f53e693aacb1737f066123",
     "url": "https://www.nuget.org/api/v2/package/System.ObjectModel/4.3.0"
   },
   {
-    "name": "System.Reflection",
-    "version": "4.3.0",
+    "fileName": "System.Reflection.4.3.0",
     "sha512": "2325b67ed60dce0302807064f25422cbe1b7fb275b539b44fba3c4a8ce4926f21d78529a5c34b31c03d80d110f7bace9af9589d457266beac014220057af8333",
     "url": "https://www.nuget.org/api/v2/package/System.Reflection/4.3.0"
   },
   {
-    "name": "System.Reflection.Emit",
-    "version": "4.3.0",
+    "fileName": "System.Reflection.Emit.4.3.0",
     "sha512": "be45051467a36ab965410f112a475fb81510a5595347d1cc0c46b028e0436a339218dd3c073f048c2d338b67dc13b45742290b6c46f55982503f74a8f2698818",
     "url": "https://www.nuget.org/api/v2/package/System.Reflection.Emit/4.3.0"
   },
   {
-    "name": "System.Reflection.Emit.ILGeneration",
-    "version": "4.3.0",
+    "fileName": "System.Reflection.Emit.ILGeneration.4.3.0",
     "sha512": "e9be5f62bf64b1947a49857337306a5d0980686b58d665989e94006ab04aa7e0bbf4d8543d1b57d5bb38079052f275f339b73054a7357e4fa357208a0ac85d69",
     "url": "https://www.nuget.org/api/v2/package/System.Reflection.Emit.ILGeneration/4.3.0"
   },
   {
-    "name": "System.Reflection.Emit.Lightweight",
-    "version": "4.3.0",
+    "fileName": "System.Reflection.Emit.Lightweight.4.3.0",
     "sha512": "ad58af07296bd084907a089f92026fa3898b764eb9d6a07c9414b550a83ac60456f32a34127c29bb93a9633fb07ba9fd828f7b41a31dce5ff019a7cf1ab29435",
     "url": "https://www.nuget.org/api/v2/package/System.Reflection.Emit.Lightweight/4.3.0"
   },
   {
-    "name": "System.Reflection.Extensions",
-    "version": "4.3.0",
+    "fileName": "System.Reflection.Extensions.4.3.0",
     "sha512": "06cfd992c8d7fd9ab6432ab02be981a01b6558285a6e26a7825a064d4efcce08d9e7344f03fa19b033a2459d42b0b80e8c1400ce39b47a1752869ab8825b0475",
     "url": "https://www.nuget.org/api/v2/package/System.Reflection.Extensions/4.3.0"
   },
   {
-    "name": "System.Reflection.Primitives",
-    "version": "4.3.0",
+    "fileName": "System.Reflection.Metadata.1.6.0",
+    "sha512": "f5227666edc6bb1da78b8a8e86a68e9bd647caa2ec6a1580c14a4a5e1fe5cfde3bdaf0d8c23dc210c405a55f83ceb6add1a9adab149dc065b38cfddc9b01ba20",
+    "url": "https://www.nuget.org/api/v2/package/System.Reflection.Metadata/1.6.0"
+  },
+  {
+    "fileName": "System.Reflection.Primitives.4.3.0",
     "sha512": "d4b9cc905f5a5cab900206338e889068bf66c18ee863a29d68eff3cde2ccca734112a2a851f2e2e5388a21ec28005fa19317c64d9b23923b05d6344be2e49eaa",
     "url": "https://www.nuget.org/api/v2/package/System.Reflection.Primitives/4.3.0"
   },
   {
-    "name": "System.Reflection.TypeExtensions",
-    "version": "4.3.0",
+    "fileName": "System.Reflection.TypeExtensions.4.3.0",
     "sha512": "68ae81a635b9af2aee9fc8fc8fe7da0356ef4da4eb32f81a89fb75613b96714e8f1a1f4c12bd0d335efbb03408cc7a744314837f13564d5fb262ca272055677f",
     "url": "https://www.nuget.org/api/v2/package/System.Reflection.TypeExtensions/4.3.0"
   },
   {
-    "name": "System.Resources.ResourceManager",
-    "version": "4.3.0",
+    "fileName": "System.Resources.ResourceManager.4.3.0",
     "sha512": "9067db28f1c48d08fc52ad40a608f88c14ad9112646741ddaf426fdfe68bed61ab01954b179461e61d187371600c1e6e5c36c788993f5a105a64f5702a6b81d4",
     "url": "https://www.nuget.org/api/v2/package/System.Resources.ResourceManager/4.3.0"
   },
   {
-    "name": "System.Runtime",
-    "version": "4.3.0",
+    "fileName": "System.Runtime.4.3.0",
     "sha512": "92ab2249f08073cfafdc4cfbd7db36d651ad871b8d8ba961006982187de374bf4a30af93f15f73b05af343f7a70cbd484b04d646570587636ae72171eb0714fb",
     "url": "https://www.nuget.org/api/v2/package/System.Runtime/4.3.0"
   },
   {
-    "name": "System.Runtime.CompilerServices.Unsafe",
-    "version": "4.5.1",
+    "fileName": "System.Runtime.CompilerServices.Unsafe.4.5.1",
     "sha512": "f6bfa11732f9a9125f03347a02e71c99862dc539de2894ebfbd6927fe0361b9119968486dc5b0051904e24c00084d9e17cfea6c021a9530cd38da3a3bf86f914",
     "url": "https://www.nuget.org/api/v2/package/System.Runtime.CompilerServices.Unsafe/4.5.1"
   },
   {
-    "name": "System.Runtime.Extensions",
-    "version": "4.3.0",
+    "fileName": "System.Runtime.Extensions.4.3.0",
     "sha512": "680a32b19c2bd5026f8687aa5382aea4f432b4f032f8bde299facb618c56d57369adef7f7cc8e60ad82ae3c12e5dd50772491363bf8044c778778628a6605bbc",
     "url": "https://www.nuget.org/api/v2/package/System.Runtime.Extensions/4.3.0"
   },
   {
-    "name": "System.Runtime.Handles",
-    "version": "4.3.0",
+    "fileName": "System.Runtime.Handles.4.3.0",
     "sha512": "0a5baf1dd554bf9e01bcb4ce082cb26ee82b783364feb47cba730faeecd70edc528efad0394dcce11f37d7f9507f8608f15629ebaf051906bfd3513e46af0f11",
     "url": "https://www.nuget.org/api/v2/package/System.Runtime.Handles/4.3.0"
   },
   {
-    "name": "System.Runtime.InteropServices",
-    "version": "4.3.0",
+    "fileName": "System.Runtime.InteropServices.4.3.0",
     "sha512": "650799c3e654efbb9ad67157c9c60ce46f288a81597be37ce2a0bf5d4835044065ef3f65b997328cbbbbfb81f4c89b8d7e7d61380880019deee6eb3f963f70d9",
     "url": "https://www.nuget.org/api/v2/package/System.Runtime.InteropServices/4.3.0"
   },
   {
-    "name": "System.Runtime.Serialization.Primitives",
-    "version": "4.1.1",
-    "sha512": "fa6a90aeb26c0f1e72c48abec0b60a1ebea955cd3c1133b3245c04dd0bd6984c0ce0253944d28676abb8edb93e1c649c693e7c6425459a3c29a74381531cb540",
-    "url": "https://www.nuget.org/api/v2/package/System.Runtime.Serialization.Primitives/4.1.1"
+    "fileName": "System.Runtime.InteropServices.RuntimeInformation.4.3.0",
+    "sha512": "6f4905329a3cc9e62d274c885f275ee31c5af57a6c9fd1a5080d039cb748e0277bef3dc8ce42863cac78365084e00a032279bf3d2b7254a49f3fb1566a29ad1b",
+    "url": "https://www.nuget.org/api/v2/package/System.Runtime.InteropServices.RuntimeInformation/4.3.0"
   },
   {
-    "name": "System.Security.Cryptography.ProtectedData",
-    "version": "4.4.0",
+    "fileName": "System.Runtime.Loader.4.0.0",
+    "sha512": "0065abcb02c8d81d79fdd9cbb859e51d61635e6ab54e5d248d668a4c76da27c4fd908c6243c6064ed88c41cf2b52be3d9762637d96bb418d0a2aa972cc0ecd36",
+    "url": "https://www.nuget.org/api/v2/package/System.Runtime.Loader/4.0.0"
+  },
+  {
+    "fileName": "System.Runtime.Serialization.Primitives.4.3.0",
+    "sha512": "fcf73baadf5675029e91f2e6e4a71c305eece3671ef69f49440f9c6da160d7b33f0a73923d652f2987f7668093f74ed83de72b185de2ce6ec6b37c6e821217ae",
+    "url": "https://www.nuget.org/api/v2/package/System.Runtime.Serialization.Primitives/4.3.0"
+  },
+  {
+    "fileName": "System.Security.Claims.4.3.0",
+    "sha512": "ab72b90801f6c051a2b31645448eebfca74642b3cfa1d51f80e21a0d0d7ad44d3366dea139347e2852781b7f3bae820df16c3eb188a2c96244df05394ed72c86",
+    "url": "https://www.nuget.org/api/v2/package/System.Security.Claims/4.3.0"
+  },
+  {
+    "fileName": "System.Security.Cryptography.ProtectedData.4.4.0",
     "sha512": "5b011ec6f05dfb5ef27d8edf712f9f04697e1c00c47c226e29e0c9a814fb0fa8fabcac18bdf2f21aeab6cbf326aca3910ba99b630b61ee48e29ced663e14cbde",
     "url": "https://www.nuget.org/api/v2/package/System.Security.Cryptography.ProtectedData/4.4.0"
   },
   {
-    "name": "System.Text.Encoding",
-    "version": "4.3.0",
+    "fileName": "System.Security.Principal.4.3.0",
+    "sha512": "db8a1ed0d189637d9ef83147550ce5da890cf6ec189a7d006ba9de86ab55679e7f025e18bdaed2dc137ddf82a7e6a0131fb4d54d4264831862b1d7c5ee62837e",
+    "url": "https://www.nuget.org/api/v2/package/System.Security.Principal/4.3.0"
+  },
+  {
+    "fileName": "System.Security.Principal.Windows.4.3.0",
+    "sha512": "66c1d5a9d649b964e1653fa2cd41d8f80515b7cd727fcd7f0890552070da1099ecd1032560f259a108e0d1d6a6da23fa07bc5c922f426a91f33b667f7c004019",
+    "url": "https://www.nuget.org/api/v2/package/System.Security.Principal.Windows/4.3.0"
+  },
+  {
+    "fileName": "System.Text.Encoding.4.3.0",
     "sha512": "6ff7feec7313a7121f795ec7d376e4b8728c17294219fafdfd4ea078f9df1455b4685f0b3962c3810098e95d68594a8392c0b799d36ec8284cd6fcbd4cfe2c67",
     "url": "https://www.nuget.org/api/v2/package/System.Text.Encoding/4.3.0"
   },
   {
-    "name": "System.Text.Encoding.Extensions",
-    "version": "4.3.0",
+    "fileName": "System.Text.Encoding.CodePages.4.4.0",
+    "sha512": "169020302f815fa38e0a245e6d8a873f7af769853ba34968a4f3a8e332b219ce4b59714461151a2ada175ef009dec3fe20338afca07165a89501d8be41d6744c",
+    "url": "https://www.nuget.org/api/v2/package/System.Text.Encoding.CodePages/4.4.0"
+  },
+  {
+    "fileName": "System.Text.Encoding.Extensions.4.3.0",
     "sha512": "e648c5dc781e35cf00c5cc8e7e42e815b963cf8fb788e8a817f9b53e318b2b42e2f7a556e9c3c64bf2f6a2fd4615f26ab4f0d4eb713a0151e71e0af3fe9c3eed",
     "url": "https://www.nuget.org/api/v2/package/System.Text.Encoding.Extensions/4.3.0"
   },
   {
-    "name": "System.Text.RegularExpressions",
-    "version": "4.1.0",
+    "fileName": "System.Text.RegularExpressions.4.1.0",
     "sha512": "9b612027e43c33cc256e016e0b400547c5923e93ab6ed1a40d2b97292cb18a1195fa79aba2b0166a6b11842a0fef6685d31b848375daffdf6d2acf297af40bbe",
     "url": "https://www.nuget.org/api/v2/package/System.Text.RegularExpressions/4.1.0"
   },
   {
-    "name": "System.Threading",
-    "version": "4.3.0",
+    "fileName": "System.Threading.4.3.0",
     "sha512": "97a2751bdce69faaf9c54f834a9fd5c60c7a786faa52f420769828dbc9b5804c1f3721ba1ea945ea1d844835d909810f9e782c9a44d0faaecccb230c4cd95a88",
     "url": "https://www.nuget.org/api/v2/package/System.Threading/4.3.0"
   },
   {
-    "name": "System.Threading.Tasks",
-    "version": "4.3.0",
+    "fileName": "System.Threading.Tasks.4.3.0",
     "sha512": "7d488ff82cb20a3b3cef6380f2dae5ea9f7baa66bf75ad711aade1e3301b25993ccf2694e33c847ea5b9bdb90ff34c46fcd8a6ba7d6f95605ba0c124ed7c5d13",
     "url": "https://www.nuget.org/api/v2/package/System.Threading.Tasks/4.3.0"
   },
   {
-    "name": "System.Threading.Tasks.Extensions",
-    "version": "4.0.0",
+    "fileName": "System.Threading.Tasks.Dataflow.4.6.0",
+    "sha512": "53e595bfe324522e53ecf337c890fb5ac5f4a6797335c334f2bfae6b63f9329bc65efebd0c4fb76c17e1773f14e99c6f3ed864bc3beacbf01a23166128a81477",
+    "url": "https://www.nuget.org/api/v2/package/System.Threading.Tasks.Dataflow/4.6.0"
+  },
+  {
+    "fileName": "System.Threading.Tasks.Extensions.4.0.0",
     "sha512": "f294f1a4179f53d59f91f01a372cc7896bf8c322e9827299cb1aa3ae2b1f809e98034834f5ccd4cb3fa1c30735082d244fff6584dab6e8870ad409b55e8a4986",
     "url": "https://www.nuget.org/api/v2/package/System.Threading.Tasks.Extensions/4.0.0"
   },
   {
-    "name": "System.Threading.Thread",
-    "version": "4.3.0",
+    "fileName": "System.Threading.Thread.4.3.0",
     "sha512": "cfe12b6a60e79e2f7fca779a511153d5b0dcae59ea1b11606f6327dbf8b3c565e2551e8ecada558e62dd3b684b5c9d676575025048edfbd3988faf7f7235a5fe",
     "url": "https://www.nuget.org/api/v2/package/System.Threading.Thread/4.3.0"
   },
   {
-    "name": "System.Threading.ThreadPool",
-    "version": "4.3.0",
+    "fileName": "System.Threading.ThreadPool.4.3.0",
     "sha512": "450a40f94a48e9396979e764e494ad624d8333f3378b91ea69b23fc836df8f5c43bbd6c8cfd91da2ab95a476e1ff042338968e09b720447f2241c014bfc75159",
     "url": "https://www.nuget.org/api/v2/package/System.Threading.ThreadPool/4.3.0"
   },
   {
-    "name": "System.Xml.ReaderWriter",
-    "version": "4.0.11",
+    "fileName": "System.Xml.ReaderWriter.4.0.11",
     "sha512": "d40d6e9d55e57acdf04132bcb8ae8abf1abb3483620cde969c78c6c393a9936abf742c1dcf66288e6e9dffcb399a880ee3c11540ac140cb32e20b41365aaf35e",
     "url": "https://www.nuget.org/api/v2/package/System.Xml.ReaderWriter/4.0.11"
   },
   {
-    "name": "System.Xml.XDocument",
-    "version": "4.0.11",
+    "fileName": "System.Xml.XDocument.4.0.11",
     "sha512": "f8ae902901963f2636f39c0652d82daa9df3fb3e3d5a60493c39f6cf01ed07c7d57f175a2d2895f4a872d4e92527e5131522218d1a67da2fd491e162273a8527",
     "url": "https://www.nuget.org/api/v2/package/System.Xml.XDocument/4.0.11"
+  },
+  {
+    "fileName": "runtime.native.System.4.3.0",
+    "sha512": "299c5a96fffdcaf1972e3e3d1c727837d18ac9e88cb79c09914f12ff1de7280dff10c9232a49a1c1d3ba7785a5cf76f28c9dce414f0a2a567688de7fd5331dc8",
+    "url": "https://www.nuget.org/api/v2/package/runtime.native.System/4.3.0"
+  },
+  {
+    "fileName": "runtime.native.System.IO.Compression.4.3.0",
+    "sha512": "bff1f0cac94327014bb07c1ebee06c216e6e4951b1ddaa0c8a753a4a0338be621fd15ec621503490dbca54a75809abc4f420669b33052b28d24d726ac79c9891",
+    "url": "https://www.nuget.org/api/v2/package/runtime.native.System.IO.Compression/4.3.0"
   }
 ]
