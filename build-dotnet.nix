@@ -4,6 +4,7 @@
   , src
   , additionalWrapperArgs ? ""
   , mono ? ""
+  , project ? ""
   , configuration ? "Release"
   , nugetsFile ? ./nugets.json }:
 let fetchurl = import <nix/fetchurl.nix>;
@@ -39,9 +40,9 @@ stdenv.mkDerivation rec {
     done
 
     echo "Running dotnet restore"
-    dotnet restore --source $PWD/packages
+    dotnet restore --source $PWD/packages ${project}
     echo "Running dotnet build"
-    dotnet build --no-restore --configuration ${configuration}
+    dotnet build --no-restore --configuration ${configuration} ${project}
 
     runHook postBuild
   '';
@@ -51,7 +52,7 @@ stdenv.mkDerivation rec {
     runHook preInstall
 
     echo Running dotnet publish
-    dotnet publish --no-restore --no-build --configuration ${configuration} -o $out
+    dotnet publish --no-restore --no-build --configuration ${configuration} -o $out ${project}
 
     echo Creating wrapper
     mkdir $out/bin
