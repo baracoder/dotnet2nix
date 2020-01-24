@@ -1,4 +1,4 @@
-{ dotnet-sdk, stdenv, makeWrapper }:
+{ dotnet-sdk, dotnetSdkPackage ? dotnet-sdk, stdenv, libunwind, libuuid, icu, openssl, zlib, curl, makeWrapper, callPackage }:
 { baseName
   , version
   , src
@@ -6,25 +6,22 @@
   , mono ? ""
   , project ? ""
   , configuration ? "Release"
-  , nugetsFile ? ./nugets.json }:
-let fetchurl = import <nix/fetchurl.nix>;
-    fetchNuPkg = 
-      { url , fileName , sha512, ... }:
-      fetchurl {
-          inherit sha512 url;
-          name = "${fileName}.nupkg";
-    };
-    nugetInfos = builtins.fromJSON (builtins.readFile nugetsFile );
-    nugets = map (n: fetchNuPkg n) nugetInfos;
+}:
+let fetchDotnet = callPackage ./fetchDotnet.nix { inherit dotnetSdkPackage; };
 in
 stdenv.mkDerivation rec {
   name = "${baseName}-${version}";
-  nativeBuildInputs =  [ dotnet-sdk makeWrapper ];
+  nativeBuildInputs =  [ dotnetSdkPackage makeWrapper ];
+
+  nugetPackages = fetchDotnet { 
+    inherit src name;
+    sha256 = "0w6xwznddfwam3m7lvfq2y6sdqbb0i253xcanf2v92vvaf5va6qy";
+  };
   inherit src mono;
-  nugetsWithFileName = map (n: "${n}:${n.name}") nugets;
+
   buildPhase = ''
     runHook preBuild
-    
+
     if [ "$mono" != "" ]; then
     export FrameworkPathOverride=${mono}/lib/mono/4.5/
     fi
@@ -33,31 +30,34 @@ stdenv.mkDerivation rec {
     export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
     # avoid permission denied error
     export HOME=$PWD
+    touch $HOME/.dotnet/$(dotnet --version).dotnetFirstUseSentinel
 
-    mkdir -p packages
-    for n in $nugetsWithFileName; do
-        ln -s `echo $n|cut -f1 -d:` packages/`echo $n | cut -f2 -d:`
-    done
 
     echo "Running dotnet restore"
-    dotnet restore --source $PWD/packages ${project}
+    export NUGET_PACKAGES=$nugetPackages
+    dotnet restore --locked-mode ${project}
     echo "Running dotnet build"
     dotnet build --no-restore --configuration ${configuration} ${project}
 
+
     runHook postBuild
   '';
-  dontStrip = true;
 
   installPhase = ''
     runHook preInstall
 
     echo Running dotnet publish
-    dotnet publish --no-restore --no-build --configuration ${configuration} -o $out ${project}
+    dotnet publish  --no-restore --no-build --configuration ${configuration} -o $out/ ${project}
 
-    echo Creating wrapper
-    mkdir $out/bin
-    makeWrapper ${dotnet-sdk}/bin/dotnet $out/bin/${baseName} --add-flags $out/${baseName}.dll ${additionalWrapperArgs}
-    chmod +x $out/bin/${baseName}
+    mkdir -p $out/bin
+    makeWrapper  $out/${baseName} $out/bin/${baseName} --set DOTNET_ROOT ${dotnetSdkPackage} 
+
     runHook postInstall
+  '';
+
+  rpath = stdenv.lib.makeLibraryPath [ stdenv.cc.cc libunwind libuuid icu openssl zlib curl ];
+  postFixup = ''
+      patchelf --set-interpreter "${stdenv.cc.bintools.dynamicLinker}" $out/${baseName}
+      patchelf --set-rpath "${rpath}" $out/${baseName}
   '';
 }
