@@ -13,7 +13,7 @@ It is currently working for simple projects and solutions with one project.
     * [ ] Publishing
 * [x] Authentication through netrc file
 * [x] Parses `Nuget.Config` files for sources and credentials
-* [x] `<DotNetCliToolReference>` support (Not part of project.assets.json)
+* [ ] `<DotNetCliToolReference>` support (Not part of project.assets.json)
 * [ ] `--self-contained` binaries, requires `--runtime` identifier + additional individual packages on restore
 
 
@@ -25,10 +25,11 @@ nix-env -i dotnet2nix -f ./
 
 ## Usage
 
-1. Change into your dotnet project directory
-2. Restore the packages `dotnet restore`
-3. Run `dotnet2nix` to get a `nugets.json` and `build-dotnet.nix` file.
-4. Build your project `nix-build`
+1. Change into your dotnet project/solution directory
+2. Restore the packages using a lockfile `dotnet restore --use-lock-file`
+3. Run `dotnet2nix` to get a `nugets.json` file.
+4. add `lib/dotnet2nix` builder to your overlay/flake.
+5. Build your project `nix-build`
 
 ## Problems 
 

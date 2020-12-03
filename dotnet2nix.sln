@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "dotnet2nix", "dotnet2nix.fsproj", "{9BC7FD12-BBCF-493B-B796-22ED8590A008}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "dotnet2nix", "src/dotnet2nix/dotnet2nix.fsproj", "{9BC7FD12-BBCF-493B-B796-22ED8590A008}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{97B62857-7DC2-455E-91B7-D36FC9E7C4B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6CB41E0C-35E7-4B2F-8258-734DA276E813}"
+ProjectSection(SolutionItems) = preProject
+	README.md = README.md
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{361E182F-F809-48B8-8305-21565AAF835E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet2nix", "dotnet2nix", "{E6B8CB75-A32B-430E-B103-615D4DBD63EB}"
+ProjectSection(SolutionItems) = preProject
+	lib\dotnet2nix\default.nix = lib\dotnet2nix\default.nix
+EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +44,9 @@ Global
 		{9BC7FD12-BBCF-493B-B796-22ED8590A008}.Release|x64.Build.0 = Release|Any CPU
 		{9BC7FD12-BBCF-493B-B796-22ED8590A008}.Release|x86.ActiveCfg = Release|Any CPU
 		{9BC7FD12-BBCF-493B-B796-22ED8590A008}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9BC7FD12-BBCF-493B-B796-22ED8590A008} = {97B62857-7DC2-455E-91B7-D36FC9E7C4B6}
+		{E6B8CB75-A32B-430E-B103-615D4DBD63EB} = {361E182F-F809-48B8-8305-21565AAF835E}
 	EndGlobalSection
 EndGlobal

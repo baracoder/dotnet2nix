@@ -2,13 +2,15 @@
   pkgs ? import (fetchTarball https://github.com/nixos/nixpkgs-channels/archive/nixos-unstable.tar.gz) {}
 }:
 let
-  builder = pkgs.callPackage ./build-dotnet.nix {dotnetSdkPackage = pkgs.dotnetCorePackages.sdk_3_1; };
+  builder = pkgs.callPackage ./lib/dotnet2nix {};
 in
 {
   dotnet2nix = builder {
-    baseName = "dotnet2nix";
+    pname = "dotnet2nix";
     version = "2020.1";
-    project = "./";
-    src = pkgs.lib.cleanSource (pkgs.lib.sourceFilesBySuffices ./. [ ".nix" ".sln" "packages.lock.json" ".fs" ".fsproj" ]) ;
+    project = "./src/dotnet2nix";
+    dotnetSdkPackage = pkgs.dotnetCorePackages.sdk_3_1; 
+    src = pkgs.lib.cleanSource (pkgs.lib.sourceFilesBySuffices ./. [ ".sln" "packages.lock.json" ".fs" ".fsproj" ]) ;
+    nugetPackagesJson = ./nugets.json;
   };
 }
