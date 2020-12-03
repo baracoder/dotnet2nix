@@ -85,6 +85,11 @@ let getDependencyInfoResources source =
     let prov = Repository.Provider.GetCoreV3()
     let sourceRepository = SourceRepository(source, prov)
     sourceRepository.GetResource<DependencyInfoResource>()
+    
+let getSearchMetadataResources source =
+    let prov = Repository.Provider.GetCoreV3()
+    let sourceRepository = SourceRepository(source, prov)
+    sourceRepository.GetResource<PackageSearchResource>()
    
 type NugetPrintLogger() =
     interface ILogger with
@@ -114,13 +119,19 @@ let getUrlsForSource sourceCacheContext package (depInfoResource:DependencyInfoR
         depInfoResource.ResolvePackages(package.Name, framework, sourceCacheContext, cl, CancellationToken.None).Result
         |> Seq.where (fun r -> r.Version.Equals(NuGetVersion.Parse package.Version))
         |> Seq.map (fun i ->
-            if i.PackageHash = null then
-                eprintfn "Package metadata does not contain a hash: %s %s" package.Name i.DownloadUri.AbsoluteUri
-            i)
-        |> Seq.map (fun i ->
-            // V3 feeds don't provide a hash :(
-            let hash = if i.PackageHash <> null then  b64ToHex i.PackageHash else package.Sha512
-            (i.DownloadUri.AbsoluteUri, hash ))
+            let url = i.DownloadUri.AbsoluteUri
+            let hash =
+                // V3 feeds don't provide a hash :(
+                if i.PackageHash <> null then
+                    b64ToHex i.PackageHash
+                else
+                    eprintfn "Package metadata does not contain a hash: %s, prefetching with nix-prefetch-url ..." package.Name
+                    runProgram "nix-prefetch-url" [  url ; "--name"; (sprintf "%s.%s.nupkg" package.Name package.Version); "--type"; "sha512" ]
+                    |> function
+                        | Ok r -> r.Trim()
+                        | Error _ -> 
+                            package.Sha512
+            (url, hash ))
     with
     | e ->
         printf "Error: %s %s: %s" package.Name package.Version (e.ToString())
