@@ -50,7 +50,7 @@ stdenv.mkDerivation rec {
     mkdir -p $NUGET_PACKAGES
     echo "Running dotnet restore"
     dotnet restore --use-lock-file --locked-mode --source ${nugetSource}
-    pachELF $NUGET_PACKAGES
+    patchELF $NUGET_PACKAGES
     echo "Running dotnet build"
     dotnet build --no-restore --configuration ${configuration} ${project}
     runHook postBuild
