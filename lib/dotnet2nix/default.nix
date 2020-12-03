@@ -9,6 +9,7 @@
   , configuration ? "Release"
   , meta ? {}
   , nugetPackagesJson
+  , additionalBuildInputs? []
 }:
 let openssl_1_0_symlinks = runCommand "openssl-1.0-symlinks" { } ''
             mkdir -p $out/lib
@@ -33,6 +34,7 @@ in
 stdenv.mkDerivation rec {
   name = "${pname}-${version}";
   nativeBuildInputs =  [ dotnetSdkPackage makeWrapper autoPatchelfHook ];
+  buildInputs = [ openssl openssl_1_0_symlinks stdenv.cc.cc ] ++ additionalBuildInputs;
 
   inherit src mono;
 
