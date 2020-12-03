@@ -1,4 +1,4 @@
-{ stdenv, libunwind, libuuid, icu, openssl, zlib, curl, makeWrapper, callPackage, linkFarm, runCommand, fetchurl }:
+{ stdenv, libunwind, libuuid, icu, openssl, zlib, curl, makeWrapper, callPackage, linkFarm, runCommand, fetchurl, autoPatchelfHook }:
 { pname
   , dotnetSdkPackage
   , version
@@ -32,7 +32,7 @@ let openssl_1_0_symlinks = runCommand "openssl-1.0-symlinks" { } ''
 in 
 stdenv.mkDerivation rec {
   name = "${pname}-${version}";
-  nativeBuildInputs =  [ dotnetSdkPackage makeWrapper ];
+  nativeBuildInputs =  [ dotnetSdkPackage makeWrapper autoPatchelfHook ];
 
   inherit src mono;
 
@@ -46,8 +46,11 @@ stdenv.mkDerivation rec {
     # avoid permission denied error
     export HOME=$PWD
     touch $HOME/.dotnet/$(dotnet --version).dotnetFirstUseSentinel
+    export NUGET_PACKAGES=$PWD/.packages
+    mkdir -p $NUGET_PACKAGES
     echo "Running dotnet restore"
     dotnet restore --use-lock-file --locked-mode --source ${nugetSource}
+    pachELF $NUGET_PACKAGES
     echo "Running dotnet build"
     dotnet build --no-restore --configuration ${configuration} ${project}
     runHook postBuild
