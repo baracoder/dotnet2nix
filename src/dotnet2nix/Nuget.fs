@@ -134,8 +134,6 @@ let getSourceUrlForPackage sources sourceCacheContext package =
         |> Seq.collect (getUrlsForSource sourceCacheContext package)
     if Seq.length sourceUrls = 0 then
         eprintfn "%s %A\n" package.Name sourceUrls
-    if package.Name = "FSharp.Core" then
-        eprintfn "%s %A\n" package.Name sourceUrls
     let url, hash = Seq.item 0 sourceUrls
     if hash <> package.Sha512 then
         eprintfn "Warning: Package %s %s\n local hash\t%s\n remote hash\t%s" package.Name package.Version package.Sha512 hash
