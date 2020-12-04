@@ -1,4 +1,4 @@
-{ stdenv, libunwind, libuuid, icu, openssl, zlib, curl, makeWrapper, callPackage, linkFarm, runCommand, fetchurl, autoPatchelfHook }:
+{ stdenv, libunwind, libuuid, icu, openssl, zlib, curl, makeWrapper, callPackage, linkFarm, runCommand, autoPatchelfHook }:
 { pname
   , dotnetSdkPackage
   , version
@@ -18,7 +18,8 @@ let openssl_1_0_symlinks = runCommand "openssl-1.0-symlinks" { } ''
             ln -s ${openssl.out}/lib/libssl.so $out/lib/libssl.so.1.0.0
             ln -s ${openssl.out}/lib/libssl.so $out/lib/libssl.so.10
         '';
-    fetchNuPkg = 
+    fetchurl = import <nix/fetchurl.nix>; # fetchurl version supporting netrc
+    fetchNuPkg =
       { url , fileName , sha512, ... }:
       fetchurl {
           inherit url sha512;
