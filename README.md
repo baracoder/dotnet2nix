@@ -15,6 +15,7 @@ It is currently working for simple projects and solutions with one project.
 * [x] Parses `Nuget.Config` files for sources and credentials
 * [ ] `<DotNetCliToolReference>` support (Not part of project.assets.json)
 * [ ] `--self-contained` binaries, requires `--runtime` identifier + additional individual packages on restore
+* [ ] Support native code
 
 
 ## Installation
@@ -28,8 +29,7 @@ nix-env -i dotnet2nix -f ./
 1. Change into your dotnet project/solution directory
 2. Restore the packages using a lockfile `dotnet restore --use-lock-file`
 3. Run `dotnet2nix` to get a `nugets.json` file.
-4. add `lib/dotnet2nix` builder to your overlay/flake.
-5. Build your project `nix-build`
+4. add `pkgs/dotnet2nixBuilder` builder to your overlay/flake.
 
 ## Problems 
 
@@ -52,8 +52,7 @@ See [nuget ticket](https://github.com/NuGet/Home/issues/5611)
 
 ### Authentication
 
-You *should be able* to use a `netrc` file
-instead. [Nix](https://nixos.org/nix/manual/#description-41) will use the
+Use a `netrc` file. [Nix](https://nixos.org/nix/manual/#description-41) will use the
 following
 location by default: `$NIX_CONF_DIR/netrc`. The contents are as follows:
 
