@@ -23,12 +23,17 @@ dotnet2nixBuilder {
 
   nugetPackagesJson = ./nugets.json;
 
-  additionalBuildInputs = [
+  buildInputs = [
     boost
     libsodium
     pkgconfig
     zeromq
   ];
+
+  doCheck = true;
+  checkPhase = ''
+    dotnet test -c Release --no-build
+  '';
 
   meta = with stdenv.lib; {
     description = "A high-performance Mining-Pool Engine";
