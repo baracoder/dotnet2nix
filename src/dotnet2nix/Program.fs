@@ -29,7 +29,13 @@ with
 [<EntryPoint>]
 let main argv =
     let parser = ArgumentParser.Create<CLIArguments>(programName = "dotnet2nix")
-    let args = parser.Parse(argv)
+    let args = parser.Parse(argv, raiseOnUsage=false)
+    
+    if args.IsUsageRequested then
+        parser.PrintUsage()
+        |> printfn "%s"
+        Environment.Exit 0
+    
     let parallelRequests = if args.Contains NoParallel then 1 else 30
     use nugetCache = Nuget.getCache (args.Contains(NoCache))
     

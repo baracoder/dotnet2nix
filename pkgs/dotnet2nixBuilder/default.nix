@@ -1,17 +1,18 @@
 { stdenv, libunwind, libuuid, icu, openssl, zlib, curl, makeWrapper, callPackage, linkFarm, runCommand, autoPatchelfHook }:
 { pname
-  , dotnetSdkPackage
   , version
   , src
+  , dotnetSdkPackage
   , additionalWrapperArgs ? ""
   , mono ? ""
   , project ? ""
   , configuration ? "Release"
   , meta ? {}
   , nugetPackagesJson
-  , additionalBuildInputs? []
-}:
-let openssl_1_0_symlinks = runCommand "openssl-1.0-symlinks" { } ''
+  , buildInputs? []
+  , ... }@args':
+let args = builtins.removeAttrs args' [ "buildInputs" ];
+    openssl_1_0_symlinks = runCommand "openssl-1.0-symlinks" { } ''
             mkdir -p $out/lib
             ln -s ${openssl.out}/lib/libcrypto.so $out/lib/libcrypto.so.1.0.0
             ln -s ${openssl.out}/lib/libcrypto.so $out/lib/libcrypto.so.10
@@ -31,11 +32,13 @@ let openssl_1_0_symlinks = runCommand "openssl-1.0-symlinks" { } ''
       path = fetchNuPkg p;
     }) packageInfos;
     nugetSource = linkFarm "${pname}-packages" nugetPackages;
+    buildInputs' = [ openssl openssl_1_0_symlinks stdenv.cc.cc ] ++ buildInputs;
+    rpath = stdenv.lib.makeLibraryPath buildInputs';
 in 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (args // {
   name = "${pname}-${version}";
   nativeBuildInputs =  [ dotnetSdkPackage makeWrapper autoPatchelfHook ];
-  buildInputs = [ openssl openssl_1_0_symlinks stdenv.cc.cc ] ++ additionalBuildInputs;
+  buildInputs = buildInputs';
 
   inherit src mono;
 
@@ -68,11 +71,10 @@ stdenv.mkDerivation rec {
     runHook postInstall
   '';
 
-  rpath = stdenv.lib.makeLibraryPath [ stdenv.cc.cc libunwind libuuid icu openssl zlib curl ];
   postFixup = ''
       patchelf --set-interpreter "${stdenv.cc.bintools.dynamicLinker}" $out/${pname}
       patchelf --set-rpath "${rpath}" $out/${pname}
   '';
 
   inherit meta;
-}
+})

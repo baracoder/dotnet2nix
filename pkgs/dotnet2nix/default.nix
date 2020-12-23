@@ -5,5 +5,9 @@ dotnet2nixBuilder {
   project = "src/dotnet2nix";
   dotnetSdkPackage = dotnetCorePackages.sdk_3_1; 
   src = lib.cleanSource (lib.sourceFilesBySuffices ./../.. [ ".sln" "packages.lock.json" ".fs" ".fsproj" ]) ;
+  doInstallCheck = true;
+  installCheckPhase = ''
+  $out/bin/dotnet2nix --help
+  '';
   nugetPackagesJson = ./nugets.json;
 }
