@@ -29,7 +29,7 @@
       <PackageReference Include="NuGet.Packaging" Version="4.9.3" />
       <PackageReference Include="NuGet.ProjectManagement" Version="4.2.0" />
       <PackageReference Include="NuGet.ProjectModel" Version="4.9.3" />
-      <PackageReference Include="NuGet.Protocol" Version="4.9.3" />
+      <PackageReference Include="NuGet.Protocol" Version="4.9.6+a32bce39889f724fbd11cfd12e946f802168b583" />
     </ItemGroup>
 
 </Project>
